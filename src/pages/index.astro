@@ -276,6 +276,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 .f91-lcd:hover::after {
   opacity: 1;
 }
+/* Encendido también con clase activa */
+.f91-lcd.active::after {
+  opacity: 1;
+}
 
       /* TOP ROW */
       .lcd-top-row {
@@ -499,6 +503,22 @@ font-family: "Boda", serif;
       tick();
       setInterval(tick, 1000);
     </script>
+<script>
+  const lcd = document.querySelector('.f91-lcd');
 
+  if (lcd) {
+    // Encender al tocar
+    lcd.addEventListener('touchstart', () => {
+      lcd.classList.toggle('active');
+    });
+
+    // Apagar al tocar fuera
+    document.addEventListener('touchstart', (e) => {
+      if (!lcd.contains(e.target)) {
+        lcd.classList.remove('active');
+      }
+    });
+  }
+</script>
   </body>
 </html>
