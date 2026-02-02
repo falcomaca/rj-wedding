@@ -183,27 +183,29 @@ será más que bienvenido.
 
   <style>
     /* ===================== HERO ===================== */
-    .hero-ceremonia {
-      width: 100%;
+.hero-ceremonia {
+  width: 100%;
   aspect-ratio: 16 / 7;
-      overflow: hidden;
-      
-    }
-    @media (max-width: 768px) {
+  overflow: hidden;
+}
+
 .hero-ceremonia img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
+
+/* ===== MÓVIL ===== */
+@media (max-width: 768px) {
+  .hero-ceremonia {
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-ceremonia img {
+    object-position: center top;
+  }
 }
-
-    .hero-ceremonia img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-
-    }
 
     /* ===================== CONTENIDO ===================== */
     .contenido {
