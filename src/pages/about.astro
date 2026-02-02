@@ -237,36 +237,48 @@ background-position: 75% center;
 
 /* ===================== MOBILE ===================== */
 
+/* ===================== FIX ASISTENCIA MÓVIL ===================== */
 @media (max-width: 768px) {
 
-  .asistencia {
-    padding: 3rem 1rem 5rem;
+  /* 1️⃣ Subir el texto un poco */
+  .asistencia-texto {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
   }
 
-  .texto.aviso {
-    font-size: 1rem;
-  }
-
+  /* 2️⃣ Hacer el sobre más compacto */
   .sobre-wrapper {
-    width: 94%;
-    padding-bottom: 220px;
+    height: 380px;          /* antes era demasiado alto */
+    margin-top: 1rem;
+    margin-bottom: 3rem;
   }
 
+  /* 3️⃣ Subir el cuerpo verde */
+  .sobre-fondo {
+    top: 120px;
+    height: 230px;
+  }
+
+  /* 4️⃣ Bajar la tarjeta blanca */
   .tarjeta {
-    width: 88%;
-    padding: 2.2rem 1.6rem;
-    top: 20px;
+    top: 60px;              /* 🔑 esto es CLAVE */
+    width: 90%;
+    padding: 2rem 1.5rem;
   }
 
+  /* 5️⃣ Fondo de olivos más suave */
+  .tarjeta::before {
+    opacity: 0.35;
+  }
+
+  /* 6️⃣ Botón bien separado */
   .btn-rsvp {
-    font-size: 0.9rem;
-    padding: 0.9rem 2rem;
+    margin-top: 1.4rem;
   }
 
+  /* 7️⃣ Sello un poco más arriba */
   .sello {
-    width: 60px;
-    height: 60px;
-    font-size: 1.2rem;
+    bottom: -2px;
   }
 
 }
