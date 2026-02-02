@@ -240,54 +240,71 @@ background-position: 75% center;
 /* ===================== FIX ASISTENCIA MÓVIL ===================== */
 @media (max-width: 768px) {
 
-  /* SUBE TODO EL BLOQUE DEL SOBRE */
+  /* 🔒 CONTENEDOR GENERAL */
   .sobre-wrapper {
-    margin-top: -2.5rem;   /* 👈 CLAVE */
+    width: 100%;
+    max-width: 340px;   /* 👈 CLAVE */
+    height: 300px;
+    margin: 2rem auto 3rem;
+    position: relative;
   }
 
-}
-@media (max-width: 768px) {
-
-  /* 1️⃣ Subir el texto un poco */
-  .asistencia-texto {
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-  }
-
-  /* 2️⃣ Hacer el sobre más compacto */
-  .sobre-wrapper {
-    height: 380px;          /* antes era demasiado alto */
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-  }
-
-  /* 3️⃣ Subir el cuerpo verde */
+  /* 🟩 CUERPO */
   .sobre-fondo {
     top: 120px;
-    height: 230px;
+    height: 180px;
+    border-radius: 10px;
   }
 
-  /* 4️⃣ Bajar la tarjeta blanca */
+  /* 🔺 SOLAPA TRASERA */
+  .solapa.trasera {
+    top: -10px;
+    border-left-width: 170px;
+    border-right-width: 170px;
+    border-bottom-width: 110px;
+  }
+
+  /* 🔺 SOLAPA SUPERIOR */
+  .solapa.superior {
+    top: -5px;
+    border-left-width: 160px;
+    border-right-width: 160px;
+    border-bottom-width: 90px;
+  }
+
+  /* ◀▶ FRONTALES */
+  .frontal {
+    height: 160px;
+  }
+
+  /* 📄 TARJETA */
   .tarjeta {
-    top: 60px;              /* 🔑 esto es CLAVE */
     width: 90%;
-    padding: 2rem 1.5rem;
+    top: 10px;
+    padding: 2rem 1.4rem 2.2rem;
   }
 
-  /* 5️⃣ Fondo de olivos más suave */
-  .tarjeta::before {
-    opacity: 0.35;
+  /* 🌿 OLIVOS */
+  .olivo {
+    background-size: 110%;
+    opacity: 0.4;
   }
 
-  /* 6️⃣ Botón bien separado */
+  /* 🔘 BOTÓN */
   .btn-rsvp {
-    margin-top: 1.4rem;
+    margin-top: 1.2rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.9rem;
   }
 
-  /* 7️⃣ Sello un poco más arriba */
+  /* 🪙 SELLO */
   .sello {
-    bottom: -2px;
+    width: 54px;
+    height: 54px;
+    bottom: -4px;
+    font-size: 1rem;
   }
+
 
 }
 
