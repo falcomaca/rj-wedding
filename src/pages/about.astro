@@ -12,39 +12,42 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <body class="font-sans text-gray-800 bg-transparent">
   <Header />
-  <main class="p-10 text-center">
+
+  <main>
     <section class="asistencia">
 
+      <!-- TEXTO -->
+      <div class="asistencia-texto">
+        <p class="texto aviso">
+          Sabemos que todavía es pronto.<br>
+          La vida da muchas vueltas… y las agendas también.<br>
+          No os preocupéis, os lo recordaremos más adelante.
+          <span>(pero desinvitarte no es una opción 😉)</span>
+        </p>
+      </div>
+
+      <!-- SOBRE -->
       <div class="sobre-wrapper">
 
         <!-- SOLAPA TRASERA -->
         <div class="solapa trasera"></div>
 
-        <!-- CUERPO DEL SOBRE -->
+        <!-- CUERPO -->
         <div class="sobre-fondo"></div>
 
-        <!-- TARJETA -->
+        <!-- TARJETA (solo botón) -->
         <div class="tarjeta">
-                    <span class="rsvp">RSVP · CONFIRMACIÓN DE ASISTENCIA</span>
-          <div class="olivo"></div>
-
-<p class="texto aviso">
-Sabemos que todavía es pronto.
-La vida da muchas vueltas…
-y las agendas también.<br>
- No os preocupeis, os lo recordaremos más adelante.
-  <span>(pero desinvitarte no es una opción 😉)</span>
-</p>
-<a 
-  href="https://docs.google.com/forms/d/e/1FAIpQLSdvl2izEVe-F4QwuzABT4NcjEzb__8H8dSmc2KTj2TaHREgxg/viewform?usp=publish-editor"
-  target="_blank"
-  class="btn-rsvp"
->
-  CONFIRMAR ASISTENCIA
-</a>
-<p class="nota-form">
-  Se abrirá el formulario de confirmación
-</p>
+           <div class="olivo"></div>
+          <a
+            href="https://docs.google.com/forms/d/1XpecWA5AQnOMow34dJx7eN8VrkqoTrzmFZZTgMY5QWw/edit"
+            target="_blank"
+            class="btn-rsvp"
+          >
+            CONFIRMAR ASISTENCIA
+          </a>
+          <p class="nota-form">
+            Se abrirá el formulario de confirmación
+          </p>
         </div>
 
         <!-- FRONTALES -->
@@ -53,8 +56,6 @@ y las agendas también.<br>
 
         <!-- SOLAPA SUPERIOR -->
         <div class="solapa superior"></div>
-
-
 
         <!-- SELLO -->
         <div class="sello">RJ</div>
@@ -67,79 +68,93 @@ y las agendas también.<br>
   <Footer />
 
 <style>
+
 /* ===================== CONTEXTO ===================== */
 
 .asistencia {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem 6rem;
 }
 
-/* ===================== WRAPPER ===================== */
+.asistencia-texto {
+  text-align: center;
+  max-width: 720px;
+  margin-top: -5rem;   /* 👈 súbelo */
+  margin-bottom: 3rem;
+  padding: 0 1.5rem;
+}
+
+.texto.aviso {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.texto.aviso span {
+  display: block;
+  margin-top: 0.8rem;
+  color: #666;
+}
+
+/* ===================== SOBRE ===================== */
+
 .sobre-wrapper {
   position: relative;
-  width: 720px;
-  margin-top: 120px;
-  margin-bottom: 9rem;
-  height: 520px;
+  width: 600px;        /* ⬅️ antes 720 */
+  height: 420px;       /* ⬅️ antes 520 */
+  margin-top: 70px;    /* ⬅️ antes 120 */
+  margin-bottom: 6rem;
 }
 
-/* ===================== SOLAPA TRASERA ===================== */
+/* SOLAPA TRASERA */
 .solapa.trasera {
   position: absolute;
-  top: -39px;
+  top: -28px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1.8%;
-  height: 0;
-
-  border-left: 350px solid transparent;
-  border-right: 350px solid transparent;
-  border-bottom: 220px solid #8b9a77;
-
+  width: 20px;
+  height: 30px;
+  border-left: 290px solid transparent;
+  border-right: 290px solid transparent;
+  border-bottom: 180px solid #8b9a77;
   z-index: 1;
 }
 
-/* ===================== CUERPO SOBRE ===================== */
+/* CUERPO */
 .sobre-fondo {
   position: absolute;
   top: 180px;
   left: 0;
   width: 100%;
-  height: 370px;
-
+  height: 290px;
   background: #8b9a77;
   border-radius: 6px;
-
   z-index: 2;
 }
 
-/* ===================== TARJETA ===================== */
+/* TARJETA */
 .tarjeta {
   position: absolute;
-  top: 19px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
+  height: 280px;
   width: 70%;
-
   background: #fff;
-
-  padding: 6.5rem 3.5rem 5rem; /* ⬅️ AQUÍ */
+  padding: 2.8rem 2rem;
   border-radius: 22px;
   text-align: center;
-
-  box-shadow:
-    0 30px 70px rgba(0,0,0,0.18),
-    inset 0 0 0 1px #f2f2f2;
-
   z-index: 6;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.18);
 }
 
-/* ===================== FRONTALES ===================== */
+/* FRONTALES */
 .frontal {
   position: absolute;
   bottom: 0;
   width: 50%;
-  height: 300px;
+  height: 220px;
   background: #8b9a77;
   z-index: 7;
 }
@@ -147,355 +162,115 @@ y las agendas también.<br>
 .frontal.izquierdo {
   left: 0;
   clip-path: polygon(0 0, 100% 100%, 0 100%);
-  border-radius: 0 0 0 6px;
 }
 
 .frontal.derecho {
   right: 0;
   clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  border-radius: 0 0 6px 0;
 }
 
-/* ===================== SOLAPA SUPERIOR ===================== */
+/* SOLAPA SUPERIOR */
 .solapa.superior {
   position: absolute;
-  top: -19px;
+  top: -14px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
-  height: 0;
-
-  border-left: 340px solid transparent;
-  border-right: 340px solid transparent;
-  border-bottom: 200px solid #e4e0d6;
-
+  height: 35px;
+  border-left: 280px solid transparent;
+  border-right: 280px solid transparent;
+  border-bottom: 160px solid #e4e0d6;
   z-index: 5;
 }
 
-/* ===================== SELLO DE CERA ===================== */
+/* SELLO */
 .sello {
   position: absolute;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-
   width: 72px;
   height: 72px;
   border-radius: 50%;
-
-  background:
-    radial-gradient(circle at 30% 30%,
-      #f6e3a5 0%,
-      #e1c06a 35%,
-      #c59a3f 60%,
-      #9a7325 85%,
-      #6f4f12 100%
-    );
-
-  box-shadow:
-    0 14px 28px rgba(0,0,0,0.4),
-    inset 0 3px 6px rgba(255,255,255,0.45),
-    inset 0 -6px 10px rgba(0,0,0,0.45);
-
-  outline: 1px solid rgba(255,255,255,0.25);
-  outline-offset: -6px;
-
+  background: radial-gradient(circle at 30% 30%, #f6e3a5, #9a7325);
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-family: "Playfair Display", serif;
   font-size: 1.4rem;
-  letter-spacing: 0.15em;
-
-color: #6a4a12;
-
-/* relieve real */
-text-shadow:
-  0 1px 0 rgba(255,255,255,0),
-  0 -1px 1px rgba(0,0,0,0.6);
-
+  color: #6a4a12;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.4);
   z-index: 10;
 }
 
-/* Textura orgánica (clave) */
-.sello::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-
-  background:
-    radial-gradient(circle at 18% 22%, rgba(255,255,255,0.18), transparent 38%),
-    radial-gradient(circle at 72% 68%, rgba(0,0,0,0.22), transparent 42%),
-    radial-gradient(circle at 55% 45%, rgba(255,255,255,0.08), transparent 55%);
-
-  mix-blend-mode: overlay;
-  opacity: 0.75;
-  pointer-events: none;
-}
-
-/* Borde irregular derretido */
-.sello::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-
-  border-radius: 50%;
-  box-shadow:
-    inset 0 0 0 2px rgba(255,255,255,0.08),
-    inset 0 0 12px rgba(0,0,0,0.25);
-
-  pointer-events: none;
-}
-
-
-
-/* ===================== TEXTO ===================== */
-.rsvp {
-  display: block;
-  position: absolute;
-  top: -70px;              /* controla lo alto que está */
-  left: 50%;
-  transform: translateX(-50%);
-
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #9a9a9a;
-
-  z-index: 2;
-}
-
-.tarjeta h1 {
-  font-size: 2.6rem;
-  margin-bottom: 1.4rem;
-}
-
-.texto {
-  font-size: 1rem;
-font-family: plairflay;
-margin-top: -400px;
-  line-height: 1.7;
-  max-width: 520px;
-}
-
-.formulario {
-  font-size: 1rem;
-  color: #777;
-}
-.olivo {
-  position: absolute;
-  top: 1px;     /* súbelo o bájalo */
-  bottom: 0px;
-  left: -16px;    /* sepáralo de los lados */
-  right: -16px;
-
-  background-image: url("/images/olivo.png");
-  background-size: 95%;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.45;
-}
-
-/* IMPORTANTE: el contenido va por encima */
-.tarjeta > *:not(.olivo) {
-  position: relative;
-  top: -30px;
-  z-index: 1;
-}
-
+/* BOTÓN */
 .btn-rsvp {
   display: inline-block;
-  margin-top: -40px;
-  padding: 0.95rem 2.6rem;
-
-  background: linear-gradient(
-    to bottom,
-    #7c8c66,
-    #6f7f5f
-  );
-
-  color: #ffffff;
-  text-decoration: none;
-
-  font-family: helvetica;
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-
+  padding: 0.9rem 1.4rem;
+  background: linear-gradient(to bottom, #7c8c66, #6f7f5f);
+  margin-top: 20%;
+  color: white;
   border-radius: 999px;
-
-  box-shadow:
-    0 10px 22px rgba(0,0,0,0.22),
-    inset 0 1px 2px rgba(255,255,255,0.25);
-
-  transition: all 0.25s ease;
-}
-
-.btn-rsvp:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 14px 28px rgba(0,0,0,0.28),
-    inset 0 1px 2px rgba(255,255,255,0.25);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
 }
 
 .nota-form {
-  margin-top: 0.1rem;
+  margin-top: 0.6rem;
   font-size: 0.85rem;
   color: #888;
 }
-.texto.aviso {
-  max-width: 380px;   /* controla lo “estrecho” */
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
-  font-size: 1.15rem;
+.olivo {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+
+  background-image: url("/images/olivo.png");
+  background-repeat: no-repeat;
+background-position: 75% center;
+  background-size: 100%;
+
+  opacity: 0.65;
+  pointer-events: none;
 }
 
-.texto.aviso span {
-  display: block;
-  margin-top: 0.6rem;
-  font-size: 1.05rem;
-  color: #666;
-}
+/* ===================== MOBILE ===================== */
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 768px) {
-  .sobre-wrapper {
-    width: 92%;
-  }
-
-  .solapa.trasera {
-    border-left-width: 47vw;
-    border-right-width: 47vw;
-  }
-
-  .solapa.superior {
-    border-left-width: 40vw;
-    border-right-width: 40vw;
-  }
-
-  .tarjeta {
-    width: 78%;
-    height: 50%;
-    padding: 3rem 2rem 4rem;
-  }
-}
 @media (max-width: 768px) {
 
-  /* ===== CONTENEDOR GENERAL ===== */
-  main {
-    padding: 2rem 1rem;
+  .asistencia {
+    padding: 3rem 1rem 5rem;
   }
 
-  .sobre-wrapper {
-    width: 100%;
-    height: 460px;          /* ⬅️ CLAVE */
-    margin-top: 60px;
-    margin-bottom: 4rem;
-  }
-
-  /* ===== SOLAPAS ===== */
-  .solapa.trasera {
-    top: -20px;
-    border-left-width: 46vw;
-    border-right-width: 46vw;
-    border-bottom-width: 160px;
-  }
-
-  .solapa.superior {
-    top: -10px;
-    border-left-width: 42vw;
-    border-right-width: 42vw;
-    border-bottom-width: 140px;
-  }
-
-  /* ===== TARJETA ===== */
-  .tarjeta {
-    width: 88%;
-    padding: 2.5rem 1.6rem 3rem; /* ⬅️ reduce MUCHO */
-    top: 40px;
-  }
-
-  /* ===== RSVP TEXTO SUPERIOR ===== */
-  .rsvp {
-    top: -40px;
-    font-size: 0.6rem;
-  }
-
-  /* ===== TEXTO ===== */
   .texto.aviso {
     font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
   }
 
-  .texto.aviso span {
-    font-size: 0.95rem;
+  .sobre-wrapper {
+    width: 94%;
+    padding-bottom: 220px;
   }
 
-  /* ===== BOTÓN ===== */
+  .tarjeta {
+    width: 88%;
+    padding: 2.2rem 1.6rem;
+    top: 20px;
+  }
+
   .btn-rsvp {
-    margin-top: 0;
-    padding: 0.85rem 1.8rem;
     font-size: 0.9rem;
+    padding: 0.9rem 2rem;
   }
 
-  /* ===== NOTA ===== */
-  .nota-form {
-    font-size: 0.75rem;
-  }
-
-  /* ===== SELLO ===== */
   .sello {
-    width: 62px;
-    height: 62px;
-    bottom: -6px;
+    width: 60px;
+    height: 60px;
     font-size: 1.2rem;
-  }
-  @media (max-width: 768px) {
-    .sobre-wrapper {
-      width: 94%;
-      height: 420px;
-      margin-top: 4rem;
-      margin-bottom: 5rem;
-    }
-
-    .sobre-fondo {
-      top: 140px;
-      height: 260px;
-    }
-
-    .tarjeta {
-      top: 10px;
-      width: 88%;
-      padding: 2.2rem 1.6rem 2.8rem;
-    }
-
-    .rsvp {
-      top: -48px;
-      font-size: 0.6rem;
-    }
-
-    .sello {
-      bottom: -6px;
-      width: 60px;
-      height: 60px;
-      font-size: 1.1rem;
-    }
-
-    .btn-rsvp {
-      margin-top: 1.2rem;
-      font-size: 0.9rem;
-      padding: 0.8rem 2rem;
-    }
-
-    .nota-form {
-      font-size: 0.75rem;
-    }
   }
 
 }
-</style>
 
+</style>
 </body>
 </html>
