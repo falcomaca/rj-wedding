@@ -149,20 +149,51 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 /* ===================== RESPONSIVE ===================== */
+/* ===================== MÓVIL ASISTENCIA ===================== */
 @media (max-width: 768px) {
-  .sobre-img-wrapper {
-    max-width: 560px;
-    margin: 2rem auto 3rem;
-  }
 
-}
-  main {
-    padding: 2rem 1rem;
+  /* Texto superior */
+  .asistencia-texto {
+    margin-bottom: 2rem;
   }
 
   .texto.aviso {
     font-size: 1rem;
+    line-height: 1.6;
+    max-width: 90%;
   }
+
+  /* Sobre */
+  .sobre-img-wrapper {
+    width: 85vw;        /* antes 90vw → un poco más estrecho */
+    max-width: 360px;   /* controla tamaño máximo en móvil */
+    margin: 2rem auto 3rem;
+  }
+
+
+  /* Botón */
+  .sobre-btn {
+    top: 38%;           /* bájalo un poco */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+    padding: 0.75rem 1.6rem;
+  }
+
+  /* Nota formulario */
+  .nota-form {
+    top: 43%;
+    font-size: 0.75rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  /* Sello */
+  .sello-img {
+    width: 70px;        /* 👈 tamaño correcto en móvil */
+    bottom: 8%;
+  }
+}
 
 
 }
