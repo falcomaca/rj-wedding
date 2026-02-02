@@ -514,19 +514,18 @@ font-family: "Boda", serif;
 <script>
   const lcd = document.querySelector('.f91-lcd');
 
-  if (lcd) {
-    // Encender al tocar
-    lcd.addEventListener('touchstart', () => {
-      lcd.classList.toggle('active');
-    });
+if (lcd) {
+  // Encender / apagar al tocar el reloj
+  lcd.addEventListener('touchstart', (e) => {
+    e.stopPropagation(); // evita que se dispare el document
+    lcd.classList.toggle('active');
+  });
 
-    // Apagar al tocar fuera
-    document.addEventListener('touchstart', (e) => {
-      if (!lcd.contains(e.target)) {
-        lcd.classList.remove('active');
-      }
-    });
-  }
+  // Apagar al tocar fuera
+  document.addEventListener('touchstart', () => {
+    lcd.classList.remove('active');
+  });
+}
 </script>
   </body>
 </html>
