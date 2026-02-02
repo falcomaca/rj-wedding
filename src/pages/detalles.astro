@@ -165,6 +165,7 @@ será más que bienvenido.
 <div class="bloque-cuentas">
   <div class="cuenta">
 <p class="iban">
+        <span>IBAN</span>
   ES12 3456 7890 1234 5678 9012
 </p>
   </div>
@@ -401,6 +402,12 @@ será más que bienvenido.
 }
 
     /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 768px) {
+  .sobre-wrapper {
+    height: 320px;   /* 👈 CLAVE */
+    margin-bottom: 2rem; /* reduce el hueco final */
+  }
+}
     @media (max-width: 768px) {
       .hero-ceremonia {
         height: 55vh;
