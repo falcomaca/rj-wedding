@@ -1,0 +1,43 @@
+---
+const { value = 0 } = Astro.props;
+
+// Mapa de segmentos por número (7 segmentos)
+const segmentsMap = {
+  0: [1,1,1,1,1,1,0],
+  1: [0,1,1,0,0,0,0],
+  2: [1,1,0,1,1,0,1],
+  3: [1,1,1,1,0,0,1],
+  4: [0,1,1,0,0,1,1],
+  5: [1,0,1,1,0,1,1],
+  6: [1,0,1,1,1,1,1],
+  7: [1,1,1,0,0,0,0],
+  8: [1,1,1,1,1,1,1],
+  9: [1,1,1,1,0,1,1],
+};
+
+const segments = segmentsMap[value] ?? segmentsMap[0];
+---
+
+<svg viewBox="0 0 40 64" class="digit">
+  <rect class={segments[0] ? "on" : "off"} x="8" y="0"  width="24" height="6" />
+  <rect class={segments[1] ? "on" : "off"} x="32" y="6" width="6" height="22" />
+  <rect class={segments[2] ? "on" : "off"} x="32" y="36" width="6" height="22" />
+  <rect class={segments[3] ? "on" : "off"} x="8" y="58" width="24" height="6" />
+  <rect class={segments[4] ? "on" : "off"} x="2" y="36" width="6" height="22" />
+  <rect class={segments[5] ? "on" : "off"} x="2" y="6" width="6" height="22" />
+  <rect class={segments[6] ? "on" : "off"} x="8" y="29" width="24" height="6" />
+</svg>
+
+<style>
+  .digit {
+    width: 24px;
+    height: auto;
+  }
+  .on {
+    fill: #1f2a1f;
+  }
+  .off {
+    fill: #cdd8c8;
+    opacity: 0.15;
+  }
+</style>

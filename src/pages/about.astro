@@ -1,63 +1,386 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
+<!doctype html>
+<html lang="es">
+<head>
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
+<body class="font-sans text-gray-800 bg-transparent">
+  <Header />
+  <main class="p-10 text-center">
+    <section class="asistencia">
+
+      <div class="sobre-wrapper">
+
+        <!-- SOLAPA TRASERA -->
+        <div class="solapa trasera"></div>
+
+        <!-- CUERPO DEL SOBRE -->
+        <div class="sobre-fondo"></div>
+
+        <!-- TARJETA -->
+        <div class="tarjeta">
+                    <span class="rsvp">RSVP · CONFIRMACIÓN DE ASISTENCIA</span>
+          <div class="olivo"></div>
+
+<p class="texto aviso">
+Sabemos que todavía es pronto.
+La vida da muchas vueltas…
+y las agendas también.<br>
+ No os preocupeis, os lo recordaremos más adelante.
+  <span>(pero desinvitarte no es una opción 😉)</span>
+</p>
+<a 
+  href="https://docs.google.com/forms/d/e/1FAIpQLSdvl2izEVe-F4QwuzABT4NcjEzb__8H8dSmc2KTj2TaHREgxg/viewform?usp=publish-editor"
+  target="_blank"
+  class="btn-rsvp"
 >
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+  CONFIRMAR ASISTENCIA
+</a>
+<p class="nota-form">
+  Se abrirá el formulario de confirmación
+</p>
+        </div>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+        <!-- FRONTALES -->
+        <div class="frontal izquierdo"></div>
+        <div class="frontal derecho"></div>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+        <!-- SOLAPA SUPERIOR -->
+        <div class="solapa superior"></div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+
+        <!-- SELLO -->
+        <div class="sello">RJ</div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <Footer />
+
+<style>
+/* ===================== CONTEXTO ===================== */
+
+.asistencia {
+  display: flex;
+  justify-content: center;
+}
+
+/* ===================== WRAPPER ===================== */
+.sobre-wrapper {
+  position: relative;
+  width: 720px;
+  margin-top: 120px;
+  margin-bottom: 9rem;
+  height: 520px;
+}
+
+/* ===================== SOLAPA TRASERA ===================== */
+.solapa.trasera {
+  position: absolute;
+  top: -39px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.8%;
+  height: 0;
+
+  border-left: 350px solid transparent;
+  border-right: 350px solid transparent;
+  border-bottom: 220px solid #8b9a77;
+
+  z-index: 1;
+}
+
+/* ===================== CUERPO SOBRE ===================== */
+.sobre-fondo {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  height: 370px;
+
+  background: #8b9a77;
+  border-radius: 6px;
+
+  z-index: 2;
+}
+
+/* ===================== TARJETA ===================== */
+.tarjeta {
+  position: absolute;
+  top: 19px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+
+  background: #fff;
+
+  padding: 6.5rem 3.5rem 5rem; /* ⬅️ AQUÍ */
+  border-radius: 22px;
+  text-align: center;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.18),
+    inset 0 0 0 1px #f2f2f2;
+
+  z-index: 6;
+}
+
+/* ===================== FRONTALES ===================== */
+.frontal {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 300px;
+  background: #8b9a77;
+  z-index: 7;
+}
+
+.frontal.izquierdo {
+  left: 0;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  border-radius: 0 0 0 6px;
+}
+
+.frontal.derecho {
+  right: 0;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  border-radius: 0 0 6px 0;
+}
+
+/* ===================== SOLAPA SUPERIOR ===================== */
+.solapa.superior {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+
+  border-left: 340px solid transparent;
+  border-right: 340px solid transparent;
+  border-bottom: 200px solid #e4e0d6;
+
+  z-index: 5;
+}
+
+/* ===================== SELLO DE CERA ===================== */
+.sello {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 30% 30%,
+      #f6e3a5 0%,
+      #e1c06a 35%,
+      #c59a3f 60%,
+      #9a7325 85%,
+      #6f4f12 100%
+    );
+
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.4),
+    inset 0 3px 6px rgba(255,255,255,0.45),
+    inset 0 -6px 10px rgba(0,0,0,0.45);
+
+  outline: 1px solid rgba(255,255,255,0.25);
+  outline-offset: -6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+
+color: #6a4a12;
+
+/* relieve real */
+text-shadow:
+  0 1px 0 rgba(255,255,255,0),
+  0 -1px 1px rgba(0,0,0,0.6);
+
+  z-index: 10;
+}
+
+/* Textura orgánica (clave) */
+.sello::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255,255,255,0.18), transparent 38%),
+    radial-gradient(circle at 72% 68%, rgba(0,0,0,0.22), transparent 42%),
+    radial-gradient(circle at 55% 45%, rgba(255,255,255,0.08), transparent 55%);
+
+  mix-blend-mode: overlay;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* Borde irregular derretido */
+.sello::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,0.08),
+    inset 0 0 12px rgba(0,0,0,0.25);
+
+  pointer-events: none;
+}
+
+
+
+/* ===================== TEXTO ===================== */
+.rsvp {
+  display: block;
+  position: absolute;
+  top: -70px;              /* controla lo alto que está */
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+
+  z-index: 2;
+}
+
+.tarjeta h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.texto {
+  font-size: 1rem;
+font-family: plairflay;
+margin-top: -400px;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.formulario {
+  font-size: 1rem;
+  color: #777;
+}
+.olivo {
+  position: absolute;
+  top: 1px;     /* súbelo o bájalo */
+  bottom: 0px;
+  left: -16px;    /* sepáralo de los lados */
+  right: -16px;
+
+  background-image: url("/images/olivo.png");
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.45;
+}
+
+/* IMPORTANTE: el contenido va por encima */
+.tarjeta > *:not(.olivo) {
+  position: relative;
+  top: -30px;
+  z-index: 1;
+}
+
+.btn-rsvp {
+  display: inline-block;
+  margin-top: -40px;
+  padding: 0.95rem 2.6rem;
+
+  background: linear-gradient(
+    to bottom,
+    #7c8c66,
+    #6f7f5f
+  );
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-family: helvetica;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.22),
+    inset 0 1px 2px rgba(255,255,255,0.25);
+
+  transition: all 0.25s ease;
+}
+
+.btn-rsvp:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.28),
+    inset 0 1px 2px rgba(255,255,255,0.25);
+}
+
+.nota-form {
+  margin-top: 0.1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+.texto.aviso {
+  max-width: 380px;   /* controla lo “estrecho” */
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  font-size: 1.15rem;
+}
+
+.texto.aviso span {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+  color: #666;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .sobre-wrapper {
+    width: 92%;
+  }
+
+  .solapa.trasera {
+    border-left-width: 47vw;
+    border-right-width: 47vw;
+  }
+
+  .solapa.superior {
+    border-left-width: 40vw;
+    border-right-width: 40vw;
+  }
+
+  .tarjeta {
+    width: 78%;
+    height: 50%;
+    padding: 3rem 2rem 4rem;
+  }
+}
+</style>
+
+</body>
+</html>

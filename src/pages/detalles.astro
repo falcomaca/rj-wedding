@@ -1,0 +1,406 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead title="Ceremonia" description={SITE_DESCRIPTION} />
+  </head>
+
+  <body class="font-sans text-gray-800 bg-transparent">
+    <Header />
+
+    <!-- HERO / FOTO DE APERTURA -->
+    <section class="hero-ceremonia">
+      <img
+        src="/images/guadalupeoleo.jpg"
+        alt="Real Monasterio de Nuestra Señora de Guadalupe"
+      />
+    </section>
+
+    <!-- BLOQUE CEREMONIA -->
+    <main class="contenido">
+      <section class="bloque-ceremonia">
+        <h2 class="titulo-seccion">Ceremonia</h2>
+        <div class="separador">
+          <span></span>
+        </div>
+
+
+        <h3 class="lugar-principal">
+          Real Monasterio de Nuestra Señora de Guadalupe
+        </h3>
+                <p class="direccion">
+          Plaza Sta. María de Guadalupe · Guadalupe, Cáceres
+        </p>
+
+        <p class="fecha">
+          26 de septiembre de 2026 · 17:30 h 
+        </p>
+        <a href="/calendar.ics" class="btn-secundario">
+  Añadir al calendario
+</a>
+
+
+        <p class="texto">
+La ceremonia tendrá lugar en el Real Monasterio de Nuestra Señora de Guadalupe, un enclave histórico de gran valor arquitectónico y simbólico, declarado Patrimonio de la Humanidad.
+        </p>
+        <a
+  href="https://www.google.com/maps?q=Real+Monasterio+de+Guadalupe"
+  target="_blank"
+  class="btn-mapa"
+>
+  Cómo llegar
+</a>
+
+      </section>
+      <section class="bloque-ceremonia">
+  <h2 class="titulo-seccion">Celebración</h2>
+
+  <div class="separador">
+    <span></span>
+  </div>
+
+  <h4 class="lugar-principal">
+    Hospedería Monasterio de Guadalupe
+  </h4>
+
+  <p class="direccion">
+    Avda, Su Majestad Juan Carlos I, s/n · Guadalupe
+  </p>
+
+  <p class="fecha">
+    A continuación de la ceremonia
+  </p>
+
+  <p class="texto">
+    Tras la ceremonia, la celebración tendrá lugar en La Hospedería del Real Monasterio de Guadalupe.
+Está situada en el claustro gótico, construido en el S. XVI, formando parte del  gran conjunto Arquitectónico del Monasterio Extremeño.
+  </p>
+
+  <a
+    href="https://maps.app.goo.gl/7QTjU2v9p1126V5s5"
+    target="_blank"
+    class="btn-mapa"
+  >
+    CÓMO LLEGAR
+  </a>
+</section>
+      <section class="bloque-ceremonia">
+  <h2 class="titulo-seccion">Alojamiento</h2>
+
+  <div class="separador">
+    <span></span>
+  </div>
+
+  <p class="texto">
+    Guadalupe es un pueblo pequeño, por lo que recomendamos reservar alojamiento con antelación.
+    Existen varias opciones con encanto a pocos minutos a pie del monasterio.
+  </p>
+
+  <a
+    href="https://www.booking.com/searchresults.es.html?ss=Guadalupe%2C+C%C3%A1ceres"
+    target="_blank"
+    class="btn-mapa"
+  >
+    VER ALOJAMIENTOS
+  </a>
+</section>
+<section class="bloque-ceremonia">
+  <h2 class="titulo-seccion">Etiqueta</h2>
+
+  <div class="separador">
+    <span></span>
+  </div>
+
+  <p class="texto">
+No estamos muy seguros si el código penal contempla algo sobre el código de vestimenta, pero teniendo en cuenta que la novia es juez, por vuestra seguridad…. mejor evitar el blanco.
+  </p>
+
+   <div class="icono-etiqueta"></div>
+</section>
+<section class="bloque-ceremonia">
+  <h2 class="titulo-seccion">Cómo llegar</h2>
+
+  <div class="separador">
+    <span></span>
+  </div>
+
+  <p class="texto texto-gracioso">
+    Llegados a este punto, muchos os estaréis preguntando cómo se llega a este lugar tan especial...
+    Puede parecer que el viaje no se acaba nunca, pero tranquilos:
+    <strong>se llega</strong>.  
+  </p>
+
+  <div class="info-transporte">
+    <p><strong>🚗 Coche</strong><br>
+    Guadalupe se encuentra a unas 2h de Madrid y Sevilla.</p>
+
+    <p><strong>🚆 Tren</strong><br>
+    Estación más cercana: Talavera de la Reina.</p>
+
+    <p><strong>✈️ Aeropuerto</strong><br>
+    Aeropuerto más cercano:Aeropuerto Adolfo Suárez Madrid-Barajas.</p>
+  </div>
+
+  </a>
+</section>
+<section class="bloque-ceremonia">
+  <h2 class="titulo-seccion">Luna de Miel</h2>
+
+  <div class="separador">
+    <span></span>
+  </div>
+
+  <p class="texto texto">
+No hay mejor regalo que celebrar este día con vosotros.
+Pero si os apetece ayudarnos a empezar nuestra luna de miel,
+será más que bienvenido.
+  </p>
+     <div class="icono-avion"></div>
+<div class="bloque-cuentas">
+  <div class="cuenta">
+    <span>IBAN</span>
+    <strong>ES12 3456 7890 1234 5678 9012</strong>
+  </div>
+
+  <div class="cuenta">
+    <span>TITULAR</span>
+    <strong>ROCÍO FALCÓ RUBIO</strong>
+  </div>
+</div>
+
+  </a>
+</section>
+    </main>
+
+    <Footer />
+  </body>
+
+  <style>
+    /* ===================== HERO ===================== */
+    .hero-ceremonia {
+      width: 100%;
+  aspect-ratio: 16 / 7;
+      overflow: hidden;
+      
+    }
+    @media (max-width: 768px) {
+.hero-ceremonia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+}
+
+    .hero-ceremonia img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+    }
+
+    /* ===================== CONTENIDO ===================== */
+    .contenido {
+      padding: 3.5rem 1.5rem 4.5rem;
+    }
+
+    .bloque-ceremonia {
+      max-width: 720px;
+  margin: 0 auto 3rem; 
+      text-align: center;
+    }
+
+    /* ===================== SEPARADOR ARQUITECTÓNICO ===================== */
+    .separador {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .separador span {
+      width: 960px;
+      height: 1px;
+      background: #8b9a77;
+      position: relative;
+    }
+
+    .separador span::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: #8b9a77;
+      border-radius: 50%;
+    }
+
+    /* ===================== TEXTOS ===================== */
+    .titulo-seccion {
+      font-size: 1.25rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #8b9a77;
+      margin-bottom: 2.2rem;
+    }
+
+    .lugar-principal {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+.fecha {
+  font-size: 1.05rem;
+  font-family: "Playfair Display", serif;
+        margin-top: -15px;
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+}
+
+    .direccion {
+      font-size: 1rem;
+      margin-top: -15px;
+      color: #777;
+      margin-bottom: 1.5rem;
+    }
+
+    .texto {
+      font-size: 1.15rem;
+      font-family: helvetica;
+      line-height: 1.8;
+      color: #444;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    /* ===================== BOTÓN MAPA ===================== */
+.btn-mapa {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 0.9rem 2.8rem;
+
+  border: 1.5px solid #8b9a77;
+  border-radius: 999px;
+
+  background: #8b9a77;
+  color: #ffffff;
+
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-mapa:hover {
+  background: #e6dccb;
+    border: 1.5px solid #e6dccb;
+      font-weight: 500;
+  color: #8b9a77;
+}
+.btn-secundario {
+  display: inline-block;
+  font-family: helvetica;
+  margin-top: 0.1rem;
+  margin-bottom: 19px;
+  padding: 0.3rem 1.9rem;
+
+  border: 1.5px solid #8b9a77;
+  border-radius: 999px;
+
+  background: #8b9a77;
+  color: #ffffff;
+
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.btn-secundario:hover {
+  background: #e6dccb;
+    border: 1.5px solid #e6dccb;
+  color: #8b9a77;
+}
+.nota-suave {
+  margin-top: 1.4rem;
+  font-size: 1rem;
+  color: #777;
+  font-style: italic;
+}
+.icono-etiqueta {
+  width: 348px;
+  height: 348px;
+  margin: 0 auto 2rem;
+  margin-bottom: -180px;
+
+  background-image: url("/images/justicia2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.32;
+}
+.bloque-cuentas {
+  display: flex;
+  font-size: 0.95rem;
+  flex-direction: column;
+    font-family: helvetica;
+      letter-spacing: 0.08em;
+        color: #555;
+  align-items: center;
+  gap: 0.2rem;   /* ← aquí está la magia */
+  margin-top: 4.4rem;
+}
+
+.cuenta span {
+  display: block;
+  font-size: 0.8rem;
+  font-family: helvetica;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8b9a77;
+  margin-bottom: 0.1rem;
+}
+
+.cuenta strong {
+  font-weight: 500;
+}
+.icono-avion {
+  width: 448px;
+  height: 348px;
+  margin: 0 auto 2rem;
+  margin-top: 10px;
+  margin-bottom: -140px;
+
+  background-image: url("/images/aviones2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.42;
+}
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 768px) {
+      .hero-ceremonia {
+        height: 55vh;
+      }
+
+      .lugar-principal {
+        font-size: 1.6rem;
+      }
+
+      .texto {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</html>

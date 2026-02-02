@@ -1,49 +1,504 @@
 ---
+
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="es">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+<body class="font-sans text-gray-800 bg-transparent">
+    <Header />
+
+<main class="p-10 text-center">
+
+      <!-- ===================== -->
+      <!-- BODA -->
+      <!-- ===================== -->
+<section class="w-full">
+  <div class="mx-auto max-w-2xl space-y-6 text-center">
+
+<section class="boda">
+  <h1 class="text-4xl font-bold">¡Nos Casamos!</h1>
+
+  <h5 class="text-2xl font-semibold">
+    Rocío & Jose | 26 de Septiembre de 2026
+  </h5>
+
+<img
+  src="/images/novios.png"
+  alt="Rocío & Jose"
+  class="w-64 h-auto shadow-lg mx-auto"
+ />
+
+<p class="boda-texto fade-in">
+  Nos complace invitarte a uno de los días más felices de nuestra vida.
+</p>
+
+<p class="boda-texto fade-in delay-1">
+  Un día muy especial que no tendría el mismo sentido sin las personas que más queremos a nuestro lado.
+  Por eso, nos encantaría compartirlo contigo.
+</p>
+
+<p class="reserva fade-in delay-2">
+  Reserva la fecha… ¡NOS VAMOS DE BODA!</strong>
+</p>
+</section>
+
+      <!-- ===================== -->
+      <!-- CASIO F-91W -->
+      <!-- ===================== -->
+<section>
+  <div class="f91-wrapper">
+
+        <div class="f91-strap top"></div>
+
+        <div class="f91-scale">
+          <div class="f91-watch">
+
+            <!-- HEADER -->
+            <div class="f91-header-top">
+              <span class="brand">CASIO</span>
+              <span class="model">F-91W</span>
+            </div>
+
+            <div class="f91-blue-line"></div>
+
+            <div class="f91-header-bottom">
+              <span>🔺LIGHT</span>
+              <span class="alarm-top">ALARM&nbsp;CHRONOGRAPH</span>
+            </div>
+
+            <!-- LCD -->
+            <div class="f91-frame">
+ <div class="f91-lcd">
+
+                <!-- FILA SUPERIOR LCD -->
+                <div class="lcd-top-row">
+<div class="lcd-left-icons">
+  <div class="icons-row">
+    <span class="bars">|||</span>
+    <span class="alarm-icon">🔔</span>
+  </div>
+  <span class="pm">PM</span>
+</div>
+
+                  <div class="lcd-date">
+                    <span class="day">SAT</span>
+                    <span class="date">26</span>
+                  </div>
+                </div>
+
+                <!-- DAYS -->
+                <div class="lcd-days">
+                  <div id="cd-days" class="days-num">000</div>
+                  <div class="days-label">DAYS</div>
+                </div>
+
+                <!-- TIME -->
+                <div class="lcd-time">
+                  <div class="time-block">
+                    <div id="cd-hours" class="time-num">00</div>
+                    <div class="time-label">HRS</div>
+                  </div>
+
+                  <span class="time-sep">:</span>
+
+                  <div class="time-block">
+                    <div id="cd-min" class="time-num">00</div>
+                    <div class="time-label">MIN</div>
+                  </div>
+
+                  <span class="time-sep">:</span>
+
+                  <div class="time-block">
+                    <div id="cd-sec" class="time-num">00</div>
+                    <div class="time-label">SEC</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- LCD FOOTER -->
+            <div class="f91-lcd-footer">
+              <span>🔺MODE</span>
+              <span>ALARM&nbsp;ON·OFF&nbsp;/&nbsp;24HR🔻</span>
+            </div>
+
+            <!-- WATER WR RESIST -->
+            <div class="f91-water">
+              <span class="line left"></span>
+              <span>WATER</span>
+              <span class="wr-wrap"><span class="wr">WR</span></span>
+              <span>RESIST</span>
+              <span class="line right"></span>
+            </div>
+
+            <!-- BOTONES -->
+            <span class="btn left"></span>
+            <span class="btn right"></span>
+<span class="btn left bottom"></span>
+
+          </div>
+        </div>
+
+        <div class="f91-strap bottom"></div>
+		  </div>
+      </section>
+
+    </main>
+
+    <Footer />
+
+    <!-- ===================== -->
+    <!-- ESTILOS -->
+    <!-- ===================== -->
+    <style>
+      @font-face {
+        font-family: "CasioLCD";
+        src: url("/fonts/digital-7.ttf") format("truetype");
+      }
+	  @font-face {
+  font-family: "Boda";
+  src: url("/PlayfairDisplay.ttf") format("truetype");
+}
+
+      .f91-scale { transform: scale(1.2); }
+
+.f91-strap {
+  width: 200px;
+  height: 96px;
+  margin: 0 auto;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0b0b0b 0%,
+      #0b0b0b 45%,
+      #151515 45%,
+      #151515 55%,
+      #0b0b0b 55%,
+      #0b0b0b 100%
+    );
+
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.05),
+    inset 0 -1px 2px rgba(0,0,0,0.6);
+}
+      .f91-strap.top { margin-bottom: -14px; }
+      .f91-strap.bottom { margin-top: -14px; }
+
+      .f91-watch {
+        width: 260px;
+        padding: 14px 14px 10px;
+        background: linear-gradient(#1f1f1f, #141414);
+        color: #fff;
+        border-radius: 34px / 30px;
+        position: relative;
+        box-shadow:
+          inset 0 0 0 3px #141414,
+          inset 0 0 0 5px #1e6bd6,
+          0 14px 28px rgba(0,0,0,.55);
+      }
+
+      .f91-header-top {
+        display: flex;
+        justify-content: space-between;
+        font-size: .7rem;
+        font-weight: 700;
+        letter-spacing: .18em;
+      }
+      .model { color: #f0c200; }
+
+      .f91-blue-line {
+        height: 2px;
+        background: #1e6bd6;
+        margin: 4px 0 3px;
+      }
+
+      .f91-header-bottom {
+        display: flex;
+        justify-content: space-between;
+        font-size: .55rem;
+        letter-spacing: .22em;
+      }
+      .alarm-top { color: #f0c200; }
+
+      .f91-frame {
+        background: #e9f0e5;
+        padding: 2px;
+  border-radius: 18px / 14px;
+      }
+
+      /* LCD BASE */
+.f91-lcd {
+  background: #e9f0e5;
+  padding: 8px;
+  border-radius: 18px / 14px;
+  color: #1f2a1f;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 0 0 1px #2a2a2a,
+    inset 0 0 0 6px #e9f0e5;
+}
+.f91-lcd::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(120, 200, 120, 0.45) 0%,
+      rgba(120, 200, 120, 0.40) 25%,
+      rgba(120, 200, 120, 0.30) 50%,
+      rgba(120, 200, 120, 0.20) 70%,
+      rgba(120, 200, 120, 0.12) 85%,
+      rgba(120, 200, 120, 0.06) 95%,
+      transparent 100%
+    );
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* ENCENDIDO AL PASAR EL RATÓN */
+.f91-lcd:hover::after {
+  opacity: 1;
+}
+
+      /* TOP ROW */
+      .lcd-top-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+      }
+
+      .lcd-left-icons {
+        display: flex;
+		margin-top: -15px;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .bars { font-size: .75rem; }
+      .alarm-icon { font-size: .7rem; }
+      .pm { font-size: .55rem; letter-spacing: 0em; }
+
+      .lcd-date {
+        text-align: right;
+        font-size: 1.15rem;
+				margin-top: -8px;
+        letter-spacing: .0em;
+      }
+
+      /* DAYS */
+      .lcd-days { text-align: center; margin-bottom: 6px; }
+
+      .days-num {
+        font-family: "CasioLCD", monospace;
+        font-size: 3.4rem;
+		margin-top: -45px;
+        letter-spacing: .04em;
+      }
+
+      .days-label {
+        font-size: .9rem;
+		margin-top: -25px;
+        letter-spacing: .2em;
+      }
+
+      /* TIME */
+      .lcd-time {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .time-block { text-align: center; }
+
+      .time-num {
+        font-family: "CasioLCD", monospace;
+        font-size: 3.4rem;
+		margin-top: -30px;
+        letter-spacing: .08em;
+      }
+
+      .time-label {
+        font-size: .9rem;
+        letter-spacing: .2em;
+        margin-top: -25px;
+      }
+
+      .time-sep {
+        font-family: "CasioLCD", monospace;
+        font-size: 3.4rem;
+        margin-top: -30px;
+      }
+
+      .f91-lcd-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 6px;
+        font-size: .55rem;
+        letter-spacing: .18em;
+      }
+
+      .f91-water {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: .6em;
+		margin-top: 5px;
+        font-size: .75rem;
+        letter-spacing: .22em;
+      }
+
+      .line {
+        position: absolute;
+        top: -5px;
+        height: 2px;
+        background: #1e6bd6;
+      }
+      .line.left { left: 0; right: 66%; }
+      .line.right { left: 64%; right: 0; }
+
+      .wr-wrap {
+        padding: 2px 18px;
+        border: 2px solid #1e6bd6;
+		margin-top: -6px;
+        border-radius: 10px;
+      }
+
+      .wr {
+        color: #d72626;
+        font-size: 1.35em;
+        font-weight: 700;
+      }
+
+      .btn {
+        position: absolute;
+        background: #555;
+        border-radius: 4px;
+      }
+      .btn.left { width: 6px; height: 22px; left: -6px; top: 40px; }
+      .btn.right { width: 6px; height: 22px; right: -6px; top: 247px; }
+      .btn.left.bottom { width: 6px; height: 22px; right: -6px; top: 247px; }
+
+	  .f91-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.boda {
+  max-width: 720px;
+font-family: "Boda", serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.boda p {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.boda-texto {
+  font-size: 1.35rem;      /* ⬅️ MÁS GRANDE */
+  line-height: 1.75;
+  max-width: 920px;
+  margin: 1.8rem auto;
+}
+.boda h1 {
+  font-size: 3.2rem;
+  letter-spacing: 0.04em;
+}
+
+.boda h5 {
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+
+.boda .reserva {
+  margin-top: 1.6rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.novios {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1.8rem auto;
+  display: block;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    </style>
+
+    <!-- ===================== -->
+    <!-- CUENTA ATRÁS + FECHA -->
+    <!-- ===================== -->
+    <script>
+      const target = new Date("2026-09-26T17:00:00").getTime();
+
+      const d = document.getElementById("cd-days");
+      const h = document.getElementById("cd-hours");
+      const m = document.getElementById("cd-min");
+      const s = document.getElementById("cd-sec");
+
+      const dayEl = document.querySelector(".lcd-date .day");
+      const dateEl = document.querySelector(".lcd-date .date");
+      const pmEl = document.querySelector(".pm");
+
+      const days = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
+
+      function tick() {
+        const now = new Date();
+        const diff = Math.max(0, target - now);
+
+        d.textContent = String(Math.floor(diff / 86400000)).padStart(3,"0");
+        h.textContent = String(Math.floor(diff / 3600000) % 24).padStart(2,"0");
+        m.textContent = String(Math.floor(diff / 60000) % 60).padStart(2,"0");
+        s.textContent = String(Math.floor(diff / 1000) % 60).padStart(2,"0");
+
+        dayEl.textContent = days[now.getDay()];
+        dateEl.textContent = String(now.getDate()).padStart(2,"0");
+        pmEl.style.opacity = now.getHours() >= 12 ? 1 : 0;
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    </script>
+
+  </body>
 </html>

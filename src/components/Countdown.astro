@@ -1,0 +1,91 @@
+<div class="casio-display">
+  <div class="segment">
+    <div class="digits" id="days"></div>
+    <div class="label">DAYS</div>
+  </div>
+  <div class="segment">
+    <div class="digits" id="hours"></div>
+    <div class="label">HRS</div>
+  </div>
+  <div class="segment">
+    <div class="digits" id="minutes"></div>
+    <div class="label">MIN</div>
+  </div>
+  <div class="segment">
+    <div class="digits" id="seconds"></div>
+    <div class="label">SEC</div>
+  </div>
+</div>
+
+<script type="module">
+  const target = new Date("2026-09-26T17:00:00");
+
+  const SEGMENTS = {
+    0: [1,1,1,1,1,1,0],
+    1: [0,1,1,0,0,0,0],
+    2: [1,1,0,1,1,0,1],
+    3: [1,1,1,1,0,0,1],
+    4: [0,1,1,0,0,1,1],
+    5: [1,0,1,1,0,1,1],
+    6: [1,0,1,1,1,1,1],
+    7: [1,1,1,0,0,0,0],
+    8: [1,1,1,1,1,1,1],
+    9: [1,1,1,1,0,1,1],
+  };
+
+  function digitSVG(n) {
+    const s = SEGMENTS[n] || SEGMENTS[0];
+    const on = '#1f2a1f';
+const off = 'transparent';
+
+    return `
+    <svg viewBox="0 0 40 64" class="digit">
+      <rect fill="${s[0]?on:off}" x="8" y="0"  width="24" height="6"/>
+      <rect fill="${s[1]?on:off}" x="32" y="6" width="6" height="22"/>
+      <rect fill="${s[2]?on:off}" x="32" y="36" width="6" height="22"/>
+      <rect fill="${s[3]?on:off}" x="8" y="58" width="24" height="6"/>
+      <rect fill="${s[4]?on:off}" x="2" y="36" width="6" height="22"/>
+      <rect fill="${s[5]?on:off}" x="2" y="6" width="6" height="22"/>
+      <rect fill="${s[6]?on:off}" x="8" y="29" width="24" height="6"/>
+    </svg>`;
+  }
+
+  function render(el, num) {
+    el.innerHTML = '';
+    num.toString().padStart(2,'0').split('').forEach(d => {
+      el.innerHTML += digitSVG(d);
+    });
+  }
+
+  const days = document.getElementById('days');
+  const hours = document.getElementById('hours');
+  const minutes = document.getElementById('minutes');
+  const seconds = document.getElementById('seconds');
+
+  function update() {
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) return;
+
+    render(days, Math.floor(diff / 86400000));
+    render(hours, Math.floor(diff / 3600000) % 24);
+    render(minutes, Math.floor(diff / 60000) % 60);
+    render(seconds, Math.floor(diff / 1000) % 60);
+  }
+
+  update();
+  setInterval(update, 1000);
+</script>
+
+<style>
+  .digits {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .digit {
+    width: 22px;
+    height: auto;
+  }
+</style>

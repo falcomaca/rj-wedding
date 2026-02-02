@@ -1,0 +1,36 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #fafafa;
+        background-image:
+          linear-gradient(
+            rgba(0,0,0,0.08) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            90deg,
+            rgba(0,0,0,0.08) 1px,
+            transparent 1px
+          );
+        background-size: 14px 14px;
+      }
+    </style>
+  </body>
+</html>
