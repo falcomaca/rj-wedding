@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -13,7 +14,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <body class="font-sans text-gray-800 bg-transparent">
   <Header />
 
-  <main>
+  <main class="p-10 text-center">
+
     <section class="asistencia">
 
       <!-- TEXTO -->
@@ -26,69 +28,58 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </p>
       </div>
 
-      <!-- SOBRE -->
-      <div class="sobre-wrapper">
+      <!-- SOBRE CON BOTÓN -->
+      <div class="sobre-img-wrapper">
+        <img
+          src="/images/sobre.png"
+          alt="Sobre abierto"
+        />
+  <!-- SELLO -->
+  <img
+    src="/images/sello-dorado.png"
+    alt="Sello"
+    class="sello-img"
+  />
 
-        <!-- SOLAPA TRASERA -->
-        <div class="solapa trasera"></div>
+        <a
+          href="https://docs.google.com/forms/d/1XpecWA5AQnOMow34dJx7eN8VrkqoTrzmFZZTgMY5QWw/edit"
+          target="_blank"
+          class="btn-rsvp sobre-btn"
+        >
+          CONFIRMAR ASISTENCIA
+        </a>
 
-        <!-- CUERPO -->
-        <div class="sobre-fondo"></div>
-
-        <!-- TARJETA (solo botón) -->
-        <div class="tarjeta">
-           <div class="olivo"></div>
-          <a
-            href="https://docs.google.com/forms/d/1XpecWA5AQnOMow34dJx7eN8VrkqoTrzmFZZTgMY5QWw/edit"
-            target="_blank"
-            class="btn-rsvp"
-          >
-            CONFIRMAR ASISTENCIA
-          </a>
-          <p class="nota-form">
-            Se abrirá el formulario de confirmación
-          </p>
-        </div>
-
-        <!-- FRONTALES -->
-        <div class="frontal izquierdo"></div>
-        <div class="frontal derecho"></div>
-
-        <!-- SOLAPA SUPERIOR -->
-        <div class="solapa superior"></div>
-
-        <!-- SELLO -->
-        <div class="sello">RJ</div>
-
+        <p class="nota-form">
+          Se abrirá el formulario de confirmación
+        </p>
       </div>
 
     </section>
+
   </main>
 
   <Footer />
 
 <style>
-
-/* ===================== CONTEXTO ===================== */
+/* ===================== ASISTENCIA ===================== */
 
 .asistencia {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 1rem 6rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+/* ===== TEXTO ===== */
 .asistencia-texto {
-  text-align: center;
-  max-width: 720px;
-  margin-top: -5rem;   /* 👈 súbelo */
   margin-bottom: 3rem;
   padding: 0 1.5rem;
+  text-align: center;   /* 👈 CLAVE */
 }
 
 .texto.aviso {
   font-size: 1.15rem;
   line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;       /* 👈 CLAVE */
 }
 
 .texto.aviso span {
@@ -97,220 +88,85 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   color: #666;
 }
 
-/* ===================== SOBRE ===================== */
-
-.sobre-wrapper {
+/* ===== SOBRE IMAGEN ===== */
+.sobre-img-wrapper {
   position: relative;
-  width: 600px;        /* ⬅️ antes 720 */
-  height: 420px;       /* ⬅️ antes 520 */
-  margin-top: 70px;    /* ⬅️ antes 120 */
-  margin-bottom: 6rem;
+  width: 520px;      /* ⬅️ MÁS GRANDE */
+  max-width: 90vw;   /* responsive */
+  overflow: visible; /* 🔑 CLAVE ABSOLUTA */
+  margin: 2.5rem auto 4rem;
 }
 
-/* SOLAPA TRASERA */
-.solapa.trasera {
-  position: absolute;
-  top: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 30px;
-  border-left: 290px solid transparent;
-  border-right: 290px solid transparent;
-  border-bottom: 180px solid #8b9a77;
-  z-index: 1;
-}
-
-/* CUERPO */
-.sobre-fondo {
-  position: absolute;
-  top: 180px;
-  left: 0;
+.sobre-img-wrapper > img:not(.sello-img) {
   width: 100%;
-  height: 290px;
-  background: #8b9a77;
-  border-radius: 6px;
-  z-index: 2;
+  display: block;
 }
-
-/* TARJETA */
-.tarjeta {
+.sello-img {
   position: absolute;
-  top: 40px;
-  left: 50%;
+  width: 90px;        /* 👈 PRUEBA 70–100 */
+  height: auto;
+  top: 55%;
+  left: 45%;
   transform: translateX(-50%);
-  height: 280px;
-  width: 70%;
-  background: #fff;
-  padding: 2.8rem 2rem;
-  border-radius: 22px;
-  text-align: center;
-  z-index: 6;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.18);
-}
-
-/* FRONTALES */
-.frontal {
-  position: absolute;
-  bottom: 0;
-  width: 50%;
-  height: 220px;
-  background: #8b9a77;
-  z-index: 7;
-}
-
-.frontal.izquierdo {
-  left: 0;
-  clip-path: polygon(0 0, 100% 100%, 0 100%);
-}
-
-.frontal.derecho {
-  right: 0;
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
-}
-
-/* SOLAPA SUPERIOR */
-.solapa.superior {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 35px;
-  border-left: 280px solid transparent;
-  border-right: 280px solid transparent;
-  border-bottom: 160px solid #e4e0d6;
-  z-index: 5;
-}
-
-/* SELLO */
-.sello {
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #f6e3a5, #9a7325);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
-  color: #6a4a12;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.4);
-  z-index: 10;
-}
-
-/* BOTÓN */
-.btn-rsvp {
-  display: inline-block;
-  padding: 0.9rem 1.4rem;
-  background: linear-gradient(to bottom, #7c8c66, #6f7f5f);
-  margin-top: 20%;
-  color: white;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-}
-
-.nota-form {
-  margin-top: 0.6rem;
-  font-size: 0.85rem;
-  color: #888;
-}
-.olivo {
-  position: absolute;
-  inset: 0;
-  border-radius: 22px;
-
-  background-image: url("/images/olivo.png");
-  background-repeat: no-repeat;
-background-position: 75% center;
-  background-size: 100%;
-
-  opacity: 0.65;
+  z-index: 3;
   pointer-events: none;
 }
 
-/* ===================== MOBILE ===================== */
+/* ===== BOTÓN ===== */
+.btn-rsvp {
+  display: inline-block;
+  padding: 0.95rem 2.6rem;
+  background: linear-gradient(to bottom, #7c8c66, #6f7f5f);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.22),
+    inset 0 1px 2px rgba(255,255,255,0.25);
+  transition: all 0.25s ease;
+}
 
-/* ===================== FIX ASISTENCIA MÓVIL ===================== */
+
+/* Posición del botón SOBRE la imagen */
+.sobre-btn {
+  position: absolute;
+  top: 35%;             /* ajusta aquí */
+  left: 30%;
+  transform: translate(-24%, -50%);
+}
+
+/* Nota */
+.nota-form {
+  position: absolute;
+  top: 39%;          /* ajusta aquí */
+  left: 47%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
-
-  /* 🔒 CONTENEDOR GENERAL */
-  .sobre-wrapper {
-    width: 100%;
-    max-width: 340px;   /* 👈 CLAVE */
-    height: 300px;
+  .sobre-img-wrapper {
+    max-width: 560px;
     margin: 2rem auto 3rem;
-    position: relative;
   }
 
-  /* 🟩 CUERPO */
-  .sobre-fondo {
-    top: 120px;
-    height: 180px;
-    border-radius: 10px;
+}
+  main {
+    padding: 2rem 1rem;
   }
 
-  /* 🔺 SOLAPA TRASERA */
-  .solapa.trasera {
-    top: -10px;
-    border-left-width: 170px;
-    border-right-width: 170px;
-    border-bottom-width: 110px;
-  }
-
-  /* 🔺 SOLAPA SUPERIOR */
-  .solapa.superior {
-    top: -5px;
-    border-left-width: 160px;
-    border-right-width: 160px;
-    border-bottom-width: 90px;
-  }
-
-  /* ◀▶ FRONTALES */
-  .frontal {
-    height: 160px;
-  }
-
-  /* 📄 TARJETA */
-  .tarjeta {
-    max-height: 180px;      /* 👈 CLAVE */
-    overflow: hidden;
-    margin-left: 20px;
-    (max-width: 768px);
-    padding: 0.8rem 1.4rem;
-  }
-
-  /* 🌿 OLIVOS */
-  .olivo {
-    background-size: 110%;
-        padding: 0.2rem 1.4rem;
-    opacity: 0.4;
-  }
-
-  /* 🔘 BOTÓN */
-  .btn-rsvp {
-    margin-top: 1.2rem;
-    padding: 0.8rem 1.6rem;
-    font-size: 0.9rem;
-  }
-
-  /* 🪙 SELLO */
-  .sello {
-    width: 54px;
-    height: 54px;
-    bottom: -4px;
+  .texto.aviso {
     font-size: 1rem;
   }
 
 
 }
-
 </style>
+
 </body>
 </html>
