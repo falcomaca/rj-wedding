@@ -172,7 +172,7 @@ será más que bienvenido.
 <p class="iban">
   <span class="iban-label">IBAN</span>
   <span class="iban-number" dir="ltr">
-    ES12 3456 7890 1234 5678 9012
+    ES12&nbsp;3456&nbsp;7890&nbsp;1234&nbsp;5678&nbsp;9012
   </span>
 </p>
 
@@ -406,20 +406,20 @@ será más que bienvenido.
   text-align: center;
   pointer-events: none; /* 🔑 corta detección iOS */
 }
-
-/* LABEL */
-.iban-label {
-  display: block;
-  font-size: 0.8rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #8b9a77;
-  margin-bottom: 0.2rem;
+a[x-apple-data-detectors],
+a[x-apple-data-detectors-type="bank-account"],
+a[x-apple-data-detectors-type="number"] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
 }
 
 /* NÚMERO */
 .iban-number {
   display: block;
+  font-family: helvetica;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
   color: #555 !important;
   text-decoration: none !important;
   font-variant-numeric: tabular-nums;
