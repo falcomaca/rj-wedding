@@ -520,6 +520,11 @@ if (lcd) {
     e.stopPropagation(); // evita que se dispare el document
     lcd.classList.toggle('active');
   });
+
+  // Apagar al tocar fuera
+  document.addEventListener('touchstart', () => {
+    lcd.classList.remove('active');
+  });
 }
 </script>
   </body>
