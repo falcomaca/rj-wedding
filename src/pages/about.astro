@@ -26,9 +26,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <section class="asistencia">
 
       <!-- TEXTO -->
-      <div class="asistencia-texto">
+       <div class="asistencia-texto">
+  <span class="asistencia-titulo">
+    Nos encantaría contar contigo
+  </span>
+
         <p class="texto aviso">
-          Sabemos que todavía es pronto.<br>
+          Sabemos que todavía es un poco pronto.<br>
           La vida da muchas vueltas… y las agendas también.<br>
           No os preocupéis, os lo recordaremos más adelante.
           <span>(pero desinvitarte no es una opción 😉)</span>
@@ -84,7 +88,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   opacity: 0.95;        /* elegante */
 }
 /* ===================== ASISTENCIA ===================== */
+.asistencia-titulo {
+  display: block;
+  margin-bottom: 1.2rem;
 
+  font-size: 1.10rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+
+  color: #8b9a77;
+  text-align: center;
+}
 .asistencia {
   max-width: 900px;
   margin: 0 auto;
@@ -188,12 +202,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   .texto.aviso {
     font-size: 1rem;
     line-height: 1.6;
-    max-width: 120%;
+    max-width: 190%;
   }
-      p.texto.aviso {
-      max-width: 100% !important;
-      padding: 0 1rem;
-    }
 
   /* Sobre */
   .sobre-img-wrapper {
