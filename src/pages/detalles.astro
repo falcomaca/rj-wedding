@@ -82,6 +82,11 @@ La ceremonia tendrá lugar en el Real Monasterio de Nuestra Señora de Guadalupe
 Está situada en el claustro gótico, construido en el S. XVI, formando parte del  gran conjunto Arquitectónico del Monasterio Extremeño.
   </p>
 
+    <p class="texto">
+Para cualquier detalle técnico adicional sobre el Monasterio, el novio es la persona indicada.
+  </p>
+
+<div class="icono-arquitectura"></div>
   <a
     href="https://maps.app.goo.gl/7QTjU2v9p1126V5s5"
     target="_blank"
@@ -118,7 +123,7 @@ Está situada en el claustro gótico, construido en el S. XVI, formando parte de
   </div>
 
   <p class="texto">
-No estamos muy seguros si el código penal contempla algo sobre el código de vestimenta, pero teniendo en cuenta que la novia es juez, por vuestra seguridad…. mejor evitar el blanco.
+No estamos muy seguros si el código penal contempla algo sobre el código de vestimenta, pero teniendo en cuenta que la novia es juez, por vuestra seguridad… mejor evitar el blanco.
   </p>
 
    <div class="icono-etiqueta"></div>
@@ -186,6 +191,9 @@ será más que bienvenido.
 
   <style>
     /* ===================== HERO ===================== */
+    .texto + .texto {
+  margin-top: 1.5rem;
+}
 .hero-ceremonia {
   width: 100%;
   aspect-ratio: 16 / 7;
@@ -357,6 +365,20 @@ será más que bienvenido.
   background-repeat: no-repeat;
   opacity: 0.32;
 }
+.icono-arquitectura {
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 2rem;
+  margin-bottom: -10px;   /* empuja el contenido siguiente */
+  
+  background-image: url("/images/muro.png"); /* 👈 tu icono */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0.28;           /* sutil */
+  pointer-events: none;    /* no interactúa */
+}
 .bloque-cuentas {
   display: flex;
   font-size: 0.95rem;
@@ -467,6 +489,12 @@ a[x-apple-data-detectors-type="number"] {
   .bloque-ceremonia .texto {
     margin-bottom: 2rem;
   }
+  .icono-arquitectura {
+  width: 280px;
+  height: 280px;
+  margin-bottom: -140px;
+  opacity: 0.22;
+}
 
   /* ===== ILUSTRACIÓN AVIÓN ===== */
   .icono-avion {
