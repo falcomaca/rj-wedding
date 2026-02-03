@@ -401,34 +401,40 @@ será más que bienvenido.
 }
 
 /* Número IBAN (anti-iOS) */
+/* CONTENEDOR */
+.iban {
+  text-align: center;
+  pointer-events: none; /* 🔑 corta detección iOS */
+}
+
+/* LABEL */
+.iban-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8b9a77;
+  margin-bottom: 0.2rem;
+}
+
+/* NÚMERO */
 .iban-number {
+  display: block;
   color: #555 !important;
   text-decoration: none !important;
   font-variant-numeric: tabular-nums;
-  -webkit-text-decoration: none;
+  white-space: nowrap;
   -webkit-text-fill-color: #555;
 }
 
-/* Por si iOS intenta crear links */
+/* 🔒 BLOQUEO TOTAL iOS / Safari */
+a[x-apple-data-detectors],
+a[x-apple-data-detectors-type="bank-account"],
+a[x-apple-data-detectors-type="number"],
 .iban-number a {
   color: inherit !important;
   text-decoration: none !important;
-  pointer-events: none;
-}
-.cuenta a,
-.cuenta a:visited,
-.cuenta a:hover,
-.cuenta a:active {
-  text-decoration: none !important;
-  color: inherit !important;
-}
-/* Safari / iOS auto-detect fix */
-a[x-apple-data-detectors],
-a[x-apple-data-detectors-type="bank-account"],
-a[x-apple-data-detectors-type="number"] {
-  color: inherit !important;
-  text-decoration: none !important;
-  font-size: inherit !important;
+  pointer-events: none !important;
 }
 .cuenta span {
   display: block;
