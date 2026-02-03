@@ -374,7 +374,21 @@ será más que bienvenido.
   word-break: keep-all;
   font-variant-numeric: tabular-nums;
 }
-
+/* 🔥 Mata los links automáticos de iOS */
+.iban a,
+.iban span,
+.iban {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+/* Safari / iOS auto-detect fix */
+a[x-apple-data-detectors],
+a[x-apple-data-detectors-type="bank-account"],
+a[x-apple-data-detectors-type="number"] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+}
 .cuenta span {
   display: block;
   font-size: 0.8rem;
