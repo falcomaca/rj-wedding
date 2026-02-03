@@ -68,6 +68,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     </section>
 
   </main>
+  <!-- FLORAL BOTTOM -->
+<section class="floral-bottom">
+  <img
+    src="/images/flores1.png"
+    alt="Decoración floral inferior"
+  />
+</section>
 
   <Footer />
 
@@ -86,6 +93,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   object-position: center;
   display: block;
   opacity: 0.95;        /* elegante */
+}
+.floral-bottom {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 3rem;   /* separa del sobre */
+}
+
+.floral-bottom img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.95;
 }
 /* ===================== ASISTENCIA ===================== */
 .asistencia-titulo {
@@ -130,7 +151,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   width: 520px;      /* ⬅️ MÁS GRANDE */
   max-width: 90vw;   /* responsive */
   overflow: visible; /* 🔑 CLAVE ABSOLUTA */
-  margin: 2.5rem auto 4rem;
+  margin: 5.5rem auto 4rem;
 }
 
 .sobre-img-wrapper > img:not(.sello-img) {
@@ -187,6 +208,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 /* ===================== RESPONSIVE ===================== */
 /* ===================== MÓVIL ASISTENCIA ===================== */
 @media (max-width: 768px) {
+    .floral-bottom img {
+    max-height: 160px;
+  }
   .floral-top img {
     max-height: 180px;
     object-position: center;
