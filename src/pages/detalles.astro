@@ -17,7 +17,7 @@ import { SITE_DESCRIPTION } from '../consts';
     <!-- HERO / FOTO DE APERTURA -->
     <section class="hero-ceremonia">
       <img
-        src="/images/guadalupe.jpg"
+        src="/images/guadalupe2.jpg"
         alt="Real Monasterio de Nuestra Señora de Guadalupe"
       />
     </section>
@@ -41,7 +41,7 @@ import { SITE_DESCRIPTION } from '../consts';
   Añadir al calendario
 </a>
         <p class="fecha">
-          26 de septiembre de 2026
+          26 de septiembre de 2026 · 13:00 h 
         </p>
 
         <a
@@ -151,9 +151,57 @@ Estamos planificando un viaje a Argentina. Si queréis tener un detalle con noso
 
   </a>
 </section>
+<section class="bloque-ceremonia galeria">
+  <h2 class="titulo-seccion">Galería</h2>
+
+  <div class="separador">
+    <span></span>
+  </div>
+
+  <div class="slider">
+    <button class="slider-btn prev">&#10094;</button>
+
+    <div class="slider-track">
+            <img src="/images/guadalupe-10.jpg" alt="Guadalupe 1" />
+      <img src="/images/guadalupe-1.jpg" alt="Guadalupe 1" />
+      <img src="/images/guadalupe-2.jpg" alt="Guadalupe 2" />
+      <img src="/images/guadalupe-3.jpg" alt="Guadalupe 3" />
+            <img src="/images/guadalupe-4.jpg" alt="Guadalupe 4" />
+                  <img src="/images/guadalupe-5.jpg" alt="Guadalupe 5" />
+      <img src="/images/guadalupe-6.jpg" alt="Guadalupe 6" />
+      <img src="/images/guadalupe-7.jpg" alt="Guadalupe 7" />
+            <img src="/images/guadalupe-8.jpg" alt="Guadalupe 8" />
+                        <img src="/images/guadalupe-9.jpg" alt="Guadalupe 9" />
+    </div>
+
+    <button class="slider-btn next">&#10095;</button>
+  </div>
+</section>
     </main>
 
     <Footer />
+    <script>
+  const track = document.querySelector('.slider-track');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let index = 0;
+  const slides = track.children;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlide();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlide();
+  });
+</script>
   </body>
 
   <style>
@@ -405,6 +453,55 @@ a[x-apple-data-detectors-type="number"],
   background-repeat: no-repeat;
   opacity: 0.49;
 }
+.galeria {
+  margin-top: 4rem;
+}
+
+.slider {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-track img {
+  min-width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* Flechas */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.6);
+  border: none;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  color: #8b9a77;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
 
     /* ===================== RESPONSIVE ===================== */
     @media (max-width: 768px) {
@@ -440,6 +537,15 @@ a[x-apple-data-detectors-type="number"],
   /* ===== BLOQUE LUNA DE MIEL ===== */
   .bloque-ceremonia {
     margin-bottom: 4rem; /* menos aire */
+  }
+  .galeria {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+  .slider-track img {
+    height: 340px;
   }
 
   /* ===== TEXTO ===== */
