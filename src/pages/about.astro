@@ -11,16 +11,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
 
-<body class="font-sans text-gray-800 bg-transparent">
+<body class="text-gray-800 bg-transparent">
   <Header />
-<section class="floral-top">
-  <img
-    src="/images/flores.png"
-    alt="Decoración floral"
-  />
 </section>
   <main class="p-10 text-center">
-    <!-- DECORACIÓN FLORAL -->
 
 
     <section class="asistencia">
@@ -69,16 +63,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
   </main>
   <!-- FLORAL BOTTOM -->
-<section class="floral-bottom">
-  <img
-    src="/images/flores1.png"
-    alt="Decoración floral inferior"
-  />
-</section>
 
   <Footer />
 
 <style>
+    	  @font-face {
+  font-family: "Boda";
+  src: url("/fonts/abadi-mt-extra-light.ttf") format("truetype");
+}
+    /* ===================== HERO ===================== */
+body {
+  font-family: "Boda", sans-serif;
+}
   /* ===================== FLORAL TOP ===================== */
 .floral-top {
   width: 100%;
@@ -176,7 +172,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   background: linear-gradient(to bottom, #7c8c66, #6f7f5f);
   color: #ffffff;
   text-decoration: none;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.05rem;
   letter-spacing: 0.08em;
   border-radius: 999px;
@@ -265,7 +260,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 
-}
+
 </style>
 
 </body>

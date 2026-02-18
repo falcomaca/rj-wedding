@@ -11,13 +11,13 @@ import { SITE_DESCRIPTION } from '../consts';
     <BaseHead title="Ceremonia" description={SITE_DESCRIPTION} />
   </head>
 
-  <body class="font-sans text-gray-800 bg-transparent">
+<body class="text-gray-800 bg-transparent boda-page">
     <Header />
 
     <!-- HERO / FOTO DE APERTURA -->
     <section class="hero-ceremonia">
       <img
-        src="/images/guadalupeoleo.jpg"
+        src="/images/guadalupe.jpg"
         alt="Real Monasterio de Nuestra Señora de Guadalupe"
       />
     </section>
@@ -82,11 +82,6 @@ La ceremonia tendrá lugar en el Real Monasterio de Nuestra Señora de Guadalupe
 Está situada en el claustro gótico, construido en el S. XVI, formando parte del  gran conjunto Arquitectónico del Monasterio Extremeño.
   </p>
 
-    <p class="texto">
-Para cualquier detalle técnico adicional sobre el Monasterio, el novio es la persona indicada.
-  </p>
-
-<div class="icono-arquitectura"></div>
   <a
     href="https://maps.app.goo.gl/7QTjU2v9p1126V5s5"
     target="_blank"
@@ -116,18 +111,9 @@ Para cualquier detalle técnico adicional sobre el Monasterio, el novio es la pe
   </a>
 </section>
 <section class="bloque-ceremonia">
-  <h2 class="titulo-seccion">Etiqueta</h2>
 
-  <div class="separador">
-    <span></span>
-  </div>
 
-  <p class="texto">
-No estamos muy seguros si el código penal contempla algo sobre el código de vestimenta, pero teniendo en cuenta que la novia es juez, por vuestra seguridad… mejor evitar el blanco.
-  </p>
 
-   <div class="icono-etiqueta"></div>
-</section>
 <section class="bloque-ceremonia">
   <h2 class="titulo-seccion">Cómo llegar</h2>
 
@@ -149,7 +135,7 @@ No estamos muy seguros si el código penal contempla algo sobre el código de ve
     Estación más cercana: Talavera de la Reina.</p>
 
     <p><strong>✈️ Aeropuerto</strong><br>
-    Aeropuerto más cercano: Aeropuerto Adolfo Suárez Madrid-Barajas.</p>
+    Aeropuerto más cercano: Adolfo Suárez Madrid-Barajas.</p>
   </div>
 
   </a>
@@ -162,17 +148,14 @@ No estamos muy seguros si el código penal contempla algo sobre el código de ve
   </div>
 
   <p class="texto texto">
-No hay mejor regalo que celebrar este día con vosotros.
-Pero si os apetece ayudarnos a empezar nuestra luna de miel,
-será más que bienvenido.
+Estamos planificando un viaje a Argentina. Si queréis tener un detalle con nosotros, os facilitamos un número de cuenta:
   </p>
-     <div class="icono-avion"></div>
 <div class="bloque-cuentas">
   <div class="cuenta">
 <p class="iban">
   <span class="iban-label">IBAN</span>
   <span class="iban-number" dir="ltr">
-    ESXX-0000-0000-0000-0000-0000
+    ES11 - 2100 - 3252 - 4222 - 0019 - 9920
   </span>
 </p>
 
@@ -180,6 +163,7 @@ será más que bienvenido.
     <span>TITULAR</span>
     <strong>ROCÍO FALCÓ RUBIO</strong>
   </div>
+  <div class="icono-argentina"></div>
 </div>
 
   </a>
@@ -190,7 +174,14 @@ será más que bienvenido.
   </body>
 
   <style>
+    	  @font-face {
+  font-family: "Boda";
+  src: url("/fonts/abadi-mt-extra-light.ttf") format("truetype");
+}
     /* ===================== HERO ===================== */
+    .boda-page main {
+  font-family: "Boda", sans-serif;
+}
     .texto + .texto {
   margin-top: 1.5rem;
 }
@@ -202,7 +193,7 @@ será más que bienvenido.
 
 .hero-ceremonia img {
   width: 100%;
-  height: 100%;
+  height: 118%;
   object-fit: cover;
   object-position: center;
 }
@@ -274,7 +265,6 @@ será más que bienvenido.
 
 .fecha {
   font-size: 1.05rem;
-  font-family: "Playfair Display", serif;
         margin-top: -15px;
   font-weight: 600;
   margin-bottom: 1.1rem;
@@ -289,7 +279,6 @@ será más que bienvenido.
 
     .texto {
       font-size: 1.15rem;
-      font-family: helvetica;
       line-height: 1.8;
       color: #444;
       max-width: 720px;
@@ -324,7 +313,6 @@ será más que bienvenido.
 }
 .btn-secundario {
   display: inline-block;
-  font-family: helvetica;
   margin-top: 0.1rem;
   margin-bottom: 19px;
   padding: 0.3rem 1.9rem;
@@ -354,41 +342,15 @@ será más que bienvenido.
   color: #777;
   font-style: italic;
 }
-.icono-etiqueta {
-  width: 348px;
-  height: 348px;
-  margin: 0 auto 2rem;
-  margin-bottom: -180px;
-
-  background-image: url("/images/justicia2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.32;
-}
-.icono-arquitectura {
-  width: 220px;
-  height: 220px;
-  margin: -1rem auto 2rem;
-  margin-bottom: -10px;   /* empuja el contenido siguiente */
-  
-  background-image: url("/images/muro.png"); /* 👈 tu icono */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  opacity: 0.30;           /* sutil */
-  pointer-events: none;    /* no interactúa */
-}
 .bloque-cuentas {
   display: flex;
   font-size: 0.95rem;
   flex-direction: column;
-    font-family: helvetica;
       letter-spacing: 0.08em;
         color: #555;
   align-items: center;
   gap: 0.2rem;   /* ← aquí está la magia */
-  margin-top: 4.4rem;
+  margin-top: 1.4rem;
 }
 /* Label IBAN (verde) */
 .iban-label {
@@ -417,8 +379,7 @@ a[x-apple-data-detectors-type="number"] {
 /* NÚMERO */
 .iban-number {
   display: block;
-  font-family: helvetica;
-  font-size: 1.05rem;
+  font-size: 1.10rem;
   letter-spacing: 0.08em;
   color: #555 !important;
   text-decoration: none !important;
@@ -439,7 +400,6 @@ a[x-apple-data-detectors-type="number"],
 .cuenta span {
   display: block;
   font-size: 0.8rem;
-  font-family: helvetica;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #8b9a77;
@@ -449,17 +409,17 @@ a[x-apple-data-detectors-type="number"],
 .cuenta strong {
   font-weight: 500;
 }
-.icono-avion {
+.icono-argentina {
   width: 448px;
   height: 348px;
   margin: 0 auto 2rem;
-  margin-top: 10px;
-  margin-bottom: -140px;
+  margin-top: 20px;
+  margin-bottom: -120px;
 
-  background-image: url("/images/aviones2.png");
+  background-image: url("/images/argentina2.png");
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.42;
+  opacity: 0.49;
 }
 
     /* ===================== RESPONSIVE ===================== */

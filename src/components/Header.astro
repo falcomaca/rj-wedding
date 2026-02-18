@@ -10,9 +10,9 @@ import HeaderLink from './HeaderLink.astro';
     </div>
 
     <div class="nav-center">
-      <HeaderLink href="/">Bienvenida</HeaderLink>
+      <HeaderLink href="/">Invitación</HeaderLink>
       <HeaderLink href="/detalles">Detalles</HeaderLink>
-      <HeaderLink href="/about">Asistencia</HeaderLink>
+      <HeaderLink href="/about">Confirmación</HeaderLink>
     </div>
 
     <div class="nav-right"></div>
@@ -21,13 +21,8 @@ import HeaderLink from './HeaderLink.astro';
 
 <style>
 @font-face {
-  font-family: "HeaderTitle";
-  src: url("/PlayfairDisplay.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "HeaderNav";
-  src: url("/HelveticaNeue.ttf") format("truetype");
+  font-family: "Boda";
+  src: url("/fonts/abadi-mt-extra-light.ttf") format("truetype");
 }
 
 header {
@@ -40,7 +35,7 @@ header {
 h2 {
   margin: 0;
   font-size: 1.1em;
-  font-family: "HeaderTitle", serif;
+  font-family: "Boda", sans-serif;
   letter-spacing: 0.05em;
 }
 
@@ -75,7 +70,7 @@ nav a {
   padding: 1em 0.5em;
   color: var(--black);
   text-decoration: none;
-  font-family: "HeaderNav", Helvetica, Arial, sans-serif;
+  font-family: "Boda";
   border-bottom: 4px solid transparent;
 }
 
