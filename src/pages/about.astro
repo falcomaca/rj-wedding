@@ -75,45 +75,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 body {
   font-family: "Boda", sans-serif;
 }
-  /* ===================== FLORAL TOP ===================== */
-.floral-top {
-  width: 100%;
-  overflow: hidden;
-  margin-top: -1px; /* pega al header */
-}
 
-.floral-top img {
-  width: 100%;
-  max-height: 280px;     /* desktop */
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  opacity: 0.95;        /* elegante */
-}
-.floral-bottom {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 3rem;   /* separa del sobre */
-}
-
-.floral-bottom img {
-  width: 100%;
-  max-height: 220px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  opacity: 0.95;
-}
 /* ===================== ASISTENCIA ===================== */
 .asistencia-titulo {
   display: block;
   margin-bottom: 1.2rem;
 
-  font-size: 1.20rem;
+  font-size: 1.25rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
 
-  color: #8b9a77;
+  color: #000000;
   text-align: center;
 }
 .asistencia {
@@ -203,20 +175,13 @@ body {
 /* ===================== RESPONSIVE ===================== */
 /* ===================== MÓVIL ASISTENCIA ===================== */
 @media (max-width: 768px) {
-    .floral-bottom img {
-    max-height: 160px;
-  }
-  .floral-top img {
-    max-height: 180px;
-    object-position: center;
-  }
-}
-@media (max-width: 768px) {
 
   /* Texto superior */
   .asistencia-texto {
     margin-bottom: 2rem;
   }
+  .asistencia-titulo {
+    margin-top: 15px;
 
   .texto.aviso {
     font-size: 1rem;
