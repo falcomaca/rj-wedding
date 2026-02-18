@@ -189,31 +189,34 @@ body {
   }
 
   /* Sobre */
-  .sobre-img-wrapper {
-    width: 85vw;        /* antes 90vw → un poco más estrecho */
-    max-width: 360px;   /* controla tamaño máximo en móvil */
-    margin: 2rem auto 3rem;
-  }
+.sobre-img-wrapper {
+  position: relative; /* asegúrate de que lo tenga */
+  width: 85vw;
+  max-width: 360px;
+  margin: 2rem auto 3rem;
+}
 
-
-  /* Botón */
-  .sobre-btn {
-    top: 30%;           /* bájalo un poco */
-    left: 46%;
-    font-size: 1.75rem;
-    transform: translate(-50%, -50%);
-    white-space: nowrap; 
-    font-size: 0.9rem;
-    padding: 0.75rem 0.75rem;
-  }
+/* BOTÓN */
+.sobre-btn {
+  position: absolute;
+  top: 38%;          /* ajusta fino aquí si quieres */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.2rem;
+}
 
   /* Nota formulario */
-  .nota-form {
-    top: 34%;
-    font-size: 0.75rem;
-    text-align: center;
-    width: 90%;
-  }
+.nota-form {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  font-size: 0.75rem;
+  text-align: center;
+}
 
   /* Sello */
   .sello-img {
