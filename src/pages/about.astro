@@ -11,11 +11,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
 
-<body class="text-gray-800 bg-transparent">
+<body class="font-sans text-gray-800 bg-transparent">
   <Header />
-</section>
   <main class="p-10 text-center">
-
 
     <section class="asistencia">
 
@@ -62,30 +60,49 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     </section>
 
   </main>
-  <!-- FLORAL BOTTOM -->
 
   <Footer />
 
 <style>
-    	  @font-face {
-  font-family: "Boda";
-  src: url("/fonts/abadi-mt-extra-light.ttf") format("truetype");
-}
-    /* ===================== HERO ===================== */
-body {
-  font-family: "Boda", sans-serif;
+  /* ===================== FLORAL TOP ===================== */
+.floral-top {
+  width: 100%;
+  overflow: hidden;
+  margin-top: -1px; /* pega al header */
 }
 
+.floral-top img {
+  width: 100%;
+  max-height: 280px;     /* desktop */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.95;        /* elegante */
+}
+.floral-bottom {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 3rem;   /* separa del sobre */
+}
+
+.floral-bottom img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.95;
+}
 /* ===================== ASISTENCIA ===================== */
 .asistencia-titulo {
   display: block;
   margin-bottom: 1.2rem;
 
-  font-size: 1.25rem;
+  font-size: 1.20rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
 
-  color: #000000;
+  color: #8b9a77;
   text-align: center;
 }
 .asistencia {
@@ -144,6 +161,7 @@ body {
   background: linear-gradient(to bottom, #7c8c66, #6f7f5f);
   color: #ffffff;
   text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.05rem;
   letter-spacing: 0.08em;
   border-radius: 999px;
@@ -169,11 +187,20 @@ body {
   left: 47%;
   transform: translateX(-50%);
   font-size: 0.85rem;
-  color: #000000;
+  color: #888;
 }
 
 /* ===================== RESPONSIVE ===================== */
 /* ===================== MÓVIL ASISTENCIA ===================== */
+@media (max-width: 768px) {
+    .floral-bottom img {
+    max-height: 160px;
+  }
+  .floral-top img {
+    max-height: 180px;
+    object-position: center;
+  }
+}
 @media (max-width: 768px) {
 
   /* Texto superior */
@@ -189,34 +216,31 @@ body {
   }
 
   /* Sobre */
-.sobre-img-wrapper {
-  position: relative; /* asegúrate de que lo tenga */
-  width: 85vw;
-  max-width: 360px;
-  margin: 2rem auto 3rem;
-}
+  .sobre-img-wrapper {
+    width: 85vw;        /* antes 90vw → un poco más estrecho */
+    max-width: 360px;   /* controla tamaño máximo en móvil */
+    margin: 2rem auto 3rem;
+  }
 
-/* BOTÓN */
-.sobre-btn {
-  position: absolute;
-  top: 33%;          /* ajusta fino aquí si quieres */
-  left: 50%;
-  transform: translate(-30%, -30%);
-  white-space: nowrap;
-  font-size: 0.9rem;
-  padding: 0.75rem 1.2rem;
-}
+
+  /* Botón */
+  .sobre-btn {
+    top: 30%;           /* bájalo un poco */
+    left: 46%;
+    font-size: 1.75rem;
+    transform: translate(-50%, -50%);
+    white-space: nowrap; 
+    font-size: 0.9rem;
+    padding: 0.75rem 0.75rem;
+  }
 
   /* Nota formulario */
-.nota-form {
-  position: absolute;
-  top: 37%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  font-size: 0.75rem;
-  text-align: center;
-}
+  .nota-form {
+    top: 34%;
+    font-size: 0.75rem;
+    text-align: center;
+    width: 90%;
+  }
 
   /* Sello */
   .sello-img {
