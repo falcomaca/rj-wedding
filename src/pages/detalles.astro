@@ -143,19 +143,7 @@ Estamos planificando un viaje a Argentina. Si queréis tener un detalle con noso
   </div>
 
 
-  <div id="cuenta-regalo" class="bloque-cuentas oculto">
-    <p class="iban">
-      <span class="iban-label">IBAN</span>
-      <span class="iban-number" dir="ltr">
-        ES11-2100-3252-4222-0019-9920
-      </span>
-    </p>
-
-    <div class="cuenta titular">
-      <span>TITULAR</span>
-      <strong>JOSÉ LUIS JIMÉNEZ RUBIO</strong>
-    </div>
-  </div>
+<div id="cuenta-regalo" class="bloque-cuentas oculto"></div>
 </section>
 <section class="bloque-ceremonia galeria">
   <h2 class="titulo-seccion">Galería</h2>
@@ -243,14 +231,34 @@ if (modal) {
     });
   }
 
-  if (btnAcceder && input && cuenta && modal) {
-    btnAcceder.addEventListener("click", () => {
-      if (input.value === "Guadalupe@2026") {
-        modal.style.display = "none";
-        cuenta.classList.remove("oculto");
-      } else {
-        alert("Contraseña incorrecta 💌");
-      }
+if (btnAcceder && input && cuenta && modal) {
+  btnAcceder.addEventListener("click", () => {
+
+    const contraseñaCorrecta = "Guadalupe@2026";
+
+    if (input.value === contraseñaCorrecta) {
+      modal.style.display = "none";
+
+      // 🔒 Inyecta la cuenta SOLO tras validar
+      cuenta.innerHTML = `
+        <p class="iban">
+          <span class="iban-label">IBAN</span>
+          <span class="iban-number" dir="ltr">
+            ES11-2100-3252-4222-0019-9920
+          </span>
+        </p>
+        <div class="cuenta titular">
+          <span>TITULAR</span>
+          <strong>JOSÉ LUIS JIMÉNEZ RUBIO</strong>
+        </div>
+      `;
+
+      cuenta.classList.remove("oculto");
+      btnDetalles.style.display = "none";
+
+    } else {
+      alert("Contraseña incorrecta 💌");
+    }
     });
   }
 
