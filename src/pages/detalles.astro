@@ -632,10 +632,10 @@ a[x-apple-data-detectors-type="number"],
   .sobre-wrapper {
         width: 94%;
         max-width: 360px;
-    height: 420px;   /* 👈 CLAVE */
+    height: 420px;   
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1rem; /* reduce el hueco final */
+    margin-bottom: 1rem; 
   }
 }
     @media (max-width: 768px) {
@@ -654,16 +654,15 @@ a[x-apple-data-detectors-type="number"],
     }
     @media (max-width: 768px) {
 
-  /* ===== BLOQUE LUNA DE MIEL ===== */
+
   .bloque-ceremonia {
-    margin-bottom: 4rem; /* menos aire */
+    margin-bottom: 4rem; 
   }
   .slider-track img {
     height: 340px;
     object-fit: cover;
   }
 
-  /* ===== TEXTO ===== */
   .bloque-ceremonia .texto {
     margin-bottom: 2rem;
   }
@@ -680,13 +679,17 @@ a[x-apple-data-detectors-type="number"],
     margin-top: 0.1rem;
   }
 
-.btn-mapa,
-.btn-secundario {
-  font-size: 0.75rem !important;
-  padding: 0.6rem 1.8rem !important;
-  letter-spacing: 0.22em;
-  font-weight: 500 !important;
-}
+  .btn-mapa,
+  .btn-secundario {
+    width: 85%;              /* ← más ancho (clave) */
+    max-width: 320px;        /* mantiene elegancia */
+    padding: 1.1rem 0;       /* ← más alto (dedo cómodo) */
+    font-size: 1.05rem;      /* legible pero fino */
+    letter-spacing: 0.28em;  /* estilo boda elegante */
+    font-weight: 500;
+    display: block;          /* necesario para centrar bien */
+    margin: 2rem auto 0;     /* centrado y con aire */
+  }
 }
   </style>
 </html>
