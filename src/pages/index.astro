@@ -20,9 +20,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <main class="p-10 text-center">
 
-      <!-- ===================== -->
-      <!-- BODA -->
-      <!-- ===================== -->
+
 <section class="w-full">
   <div class="mx-auto max-w-2xl space-y-6 text-center">
 
@@ -60,9 +58,6 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
 </p>
 </section>
 
-      <!-- ===================== -->
-      <!-- CASIO F-91W -->
-      <!-- ===================== -->
 <section>
   <div class="f91-wrapper">
 
@@ -71,7 +66,7 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
         <div class="f91-scale">
           <div class="f91-watch">
 
-            <!-- HEADER -->
+
             <div class="f91-header-top">
               <span class="brand">CASIO</span>
               <span class="model">F-91W</span>
@@ -84,11 +79,11 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
               <span class="alarm-top">ALARM&nbsp;CHRONOGRAPH</span>
             </div>
 
-            <!-- LCD -->
+
             <div class="f91-frame">
  <div class="f91-lcd">
 
-                <!-- FILA SUPERIOR LCD -->
+
                 <div class="lcd-top-row">
 <div class="lcd-left-icons">
   <div class="icons-row">
@@ -104,13 +99,13 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
                   </div>
                 </div>
 
-                <!-- DAYS -->
+
                 <div class="lcd-days">
                   <div id="cd-days" class="days-num">000</div>
                   <div class="days-label">DAYS</div>
                 </div>
 
-                <!-- TIME -->
+
                 <div class="lcd-time">
                   <div class="time-block">
                     <div id="cd-hours" class="time-num">00</div>
@@ -135,13 +130,13 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
               </div>
             </div>
 
-            <!-- LCD FOOTER -->
+
             <div class="f91-lcd-footer">
               <span>🔺MODE</span>
               <span>ALARM&nbsp;ON·OFF&nbsp;/&nbsp;24HR🔻</span>
             </div>
 
-            <!-- WATER WR RESIST -->
+
             <div class="f91-water">
               <span class="line left"></span>
               <span>WATER</span>
@@ -150,7 +145,7 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
               <span class="line right"></span>
             </div>
 
-            <!-- BOTONES -->
+
             <span class="btn left"></span>
             <span class="btn right"></span>
 <span class="btn left bottom"></span>
@@ -166,9 +161,7 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
 
     <Footer />
 
-    <!-- ===================== -->
-    <!-- ESTILOS -->
-    <!-- ===================== -->
+
     <style>
       @font-face {
         font-family: "CasioLCD";
@@ -246,7 +239,7 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
   border-radius: 18px / 14px;
       }
 
-      /* LCD BASE */
+
 .f91-lcd {
   background: #e9f0e5;
   padding: 8px;
@@ -282,16 +275,16 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
   pointer-events: none;
 }
 
-/* ENCENDIDO AL PASAR EL RATÓN */
+
 .f91-lcd:hover::after {
   opacity: 1;
 }
-/* Encendido también con clase activa */
+
 .f91-lcd.active::after {
   opacity: 1;
 }
 
-      /* TOP ROW */
+
       .lcd-top-row {
         display: flex;
         justify-content: space-between;
@@ -316,7 +309,7 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
         letter-spacing: .0em;
       }
 
-      /* DAYS */
+
       .lcd-days { text-align: center; margin-bottom: 6px; }
 
       .days-num {
@@ -332,7 +325,7 @@ A continuación, la celebración tendrá lugar en la Hospedería del Real Monast
         letter-spacing: .2em;
       }
 
-      /* TIME */
+
       .lcd-time {
         display: flex;
         justify-content: center;
@@ -430,7 +423,7 @@ font-family: "Boda", sans-serif;
   margin-right: auto;
 }
 .boda-texto {
-  font-size: 1.35rem;      /* ⬅️ MÁS GRANDE */
+  font-size: 1.35rem;      
   line-height: 1.75;
   max-width: 920px;
   margin: 1.8rem auto;
@@ -481,10 +474,10 @@ font-family: "Boda", sans-serif;
 }
 @media (max-width: 768px) {
   h5 {
-    font-size: 1.2rem;     /* más pequeño en móvil */
+    font-size: 1.2rem;     
     line-height: 1.4;
     text-align: center;
-    white-space: normal;  /* permite saltos naturales */
+    white-space: normal; 
   }
   .boda {
     margin-top: 60px;
@@ -493,9 +486,7 @@ font-family: "Boda", sans-serif;
 
     </style>
 
-    <!-- ===================== -->
-    <!-- CUENTA ATRÁS + FECHA -->
-    <!-- ===================== -->
+
     <script>
       const target = new Date("2026-09-26T17:00:00").getTime();
 
@@ -531,13 +522,13 @@ font-family: "Boda", sans-serif;
   const lcd = document.querySelector('.f91-lcd');
 
 if (lcd) {
-  // Encender / apagar al tocar el reloj
+
   lcd.addEventListener('touchstart', (e) => {
-    e.stopPropagation(); // evita que se dispare el document
+    e.stopPropagation(); 
     lcd.classList.toggle('active');
   });
 
-  // Apagar al tocar fuera
+
   document.addEventListener('touchstart', () => {
     lcd.classList.remove('active');
   });

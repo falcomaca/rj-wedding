@@ -17,7 +17,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
     <section class="asistencia">
 
-      <!-- TEXTO -->
+
        <div class="asistencia-texto">
   <span class="asistencia-titulo">
     Nos encantaría contar contigo
@@ -31,13 +31,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </p>
       </div>
 
-      <!-- SOBRE CON BOTÓN -->
+
       <div class="sobre-img-wrapper">
         <img
           src="/images/sobre.png"
           alt="Sobre abierto"
         />
-  <!-- SELLO -->
+
   <img
     src="/images/sello-dorado.png"
     alt="Sello"
@@ -64,36 +64,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <Footer />
 
 <style>
-  /* ===================== FLORAL TOP ===================== */
-.floral-top {
-  width: 100%;
-  overflow: hidden;
-  margin-top: -1px; /* pega al header */
-}
 
-.floral-top img {
-  width: 100%;
-  max-height: 280px;     /* desktop */
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  opacity: 0.95;        /* elegante */
-}
-.floral-bottom {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 3rem;   /* separa del sobre */
-}
-
-.floral-bottom img {
-  width: 100%;
-  max-height: 220px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  opacity: 0.95;
-}
-/* ===================== ASISTENCIA ===================== */
 .asistencia-titulo {
   display: block;
   margin-bottom: 1.2rem;
@@ -110,18 +81,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   margin: 0 auto;
 }
 
-/* ===== TEXTO ===== */
+
 .asistencia-texto {
   margin-bottom: 3rem;
   padding: 0 1.5rem;
-  text-align: center;   /* 👈 CLAVE */
+  text-align: center;   
 }
 
 .texto.aviso {
   font-size: 1.15rem;
   line-height: 1.7;
   max-width: 920px;
-  margin: 0 auto;       /* 👈 CLAVE */
+  margin: 0 auto;       
 }
 
 .texto.aviso span {
@@ -130,12 +101,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   color: #666;
 }
 
-/* ===== SOBRE IMAGEN ===== */
+
 .sobre-img-wrapper {
   position: relative;
-  width: 520px;      /* ⬅️ MÁS GRANDE */
-  max-width: 90vw;   /* responsive */
-  overflow: visible; /* 🔑 CLAVE ABSOLUTA */
+  width: 520px;      
+  max-width: 90vw;   
+  overflow: visible; 
   margin: 5.5rem auto 4rem;
 }
 
@@ -145,7 +116,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 .sello-img {
   position: absolute;
-  width: 90px;        /* 👈 PRUEBA 70–100 */
+  width: 90px;        
   height: auto;
   top: 55%;
   left: 45%;
@@ -154,7 +125,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   pointer-events: none;
 }
 
-/* ===== BOTÓN ===== */
+
 .btn-rsvp {
   display: inline-block;
   padding: 0.95rem 2.6rem;
@@ -172,38 +143,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 
-/* Posición del botón SOBRE la imagen */
+
 .sobre-btn {
   position: absolute;
-  top: 35%;             /* ajusta aquí */
+  top: 35%;             
   left: 30%;
   transform: translate(-24%, -50%);
 }
 
-/* Nota */
+
 .nota-form {
   position: absolute;
-  top: 39%;          /* ajusta aquí */
+  top: 39%;          
   left: 47%;
   transform: translateX(-50%);
   font-size: 0.85rem;
   color: #888;
-}
 
-/* ===================== RESPONSIVE ===================== */
-/* ===================== MÓVIL ASISTENCIA ===================== */
-@media (max-width: 768px) {
-    .floral-bottom img {
-    max-height: 160px;
-  }
-  .floral-top img {
-    max-height: 180px;
-    object-position: center;
-  }
 }
 @media (max-width: 768px) {
 
-  /* Texto superior */
+
   .asistencia-texto {
     margin-bottom: 2rem;
   }
@@ -215,17 +175,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     max-width: 100%;
   }
 
-  /* Sobre */
+
   .sobre-img-wrapper {
-    width: 85vw;        /* antes 90vw → un poco más estrecho */
-    max-width: 360px;   /* controla tamaño máximo en móvil */
+    width: 85vw;        
+    max-width: 360px;   
     margin: 2rem auto 3rem;
   }
 
 
-  /* Botón */
+
   .sobre-btn {
-    top: 30%;           /* bájalo un poco */
+    top: 30%;           
     left: 46%;
     font-size: 1.75rem;
     transform: translate(-50%, -50%);
@@ -234,7 +194,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     padding: 0.75rem 0.75rem;
   }
 
-  /* Nota formulario */
+
   .nota-form {
     top: 34%;
     font-size: 0.75rem;
@@ -242,9 +202,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     width: 90%;
   }
 
-  /* Sello */
+
   .sello-img {
-    width: 70px;        /* 👈 tamaño correcto en móvil */
+    width: 70px;        /
     bottom: 8%;
   }
 }

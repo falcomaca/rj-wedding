@@ -14,7 +14,7 @@ import { SITE_DESCRIPTION } from '../consts';
 <body class="text-gray-800 bg-transparent boda-page">
     <Header />
 
-    <!-- HERO / FOTO DE APERTURA -->
+
     <section class="hero-ceremonia">
       <img
         src="/images/guadalupe2.jpg"
@@ -22,7 +22,7 @@ import { SITE_DESCRIPTION } from '../consts';
       />
     </section>
 
-    <!-- BLOQUE CEREMONIA -->
+
     <main class="contenido">
       <section class="bloque-ceremonia">
         <h2 class="titulo-seccion">Ceremonia</h2>
@@ -131,7 +131,7 @@ Estamos planificando un viaje a Argentina. Si queréis tener un detalle con noso
 <button class="btn-mapa" id="btn-ver-detalles">
   VER DETALLES
 </button>
-  <!-- MODAL CONTRASEÑA -->
+
 <div id="modal-regalo" class="modal-regalo">
   <div class="modal-contenido">
     <button class="cerrar-modal" id="cerrar-modal">&times;</button>
@@ -142,7 +142,7 @@ Estamos planificando un viaje a Argentina. Si queréis tener un detalle con noso
     </div>
   </div>
 
-  <!-- CUENTA OCULTA -->
+
   <div id="cuenta-regalo" class="bloque-cuentas oculto">
     <p class="iban">
       <span class="iban-label">IBAN</span>
@@ -189,7 +189,7 @@ Estamos planificando un viaje a Argentina. Si queréis tener un detalle con noso
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===== GALERÍA ===== */
+
   const track = document.querySelector('.slider-track');
   const nextBtn = document.querySelector('.next');
   const prevBtn = document.querySelector('.prev');
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ===== MODAL REGALO (VERSIÓN ROBUSTA) ===== */
+
 const btnDetalles = document.getElementById("btn-ver-detalles");
 const btnAcceder = document.getElementById("btn-acceder");
 const cerrarModal = document.getElementById("cerrar-modal");
@@ -221,14 +221,14 @@ const modal = document.getElementById("modal-regalo");
 const cuenta = document.getElementById("cuenta-regalo");
 const input = document.getElementById("clave-regalo");
 
-// Cerrar con la X
+
 if (cerrarModal && modal) {
   cerrarModal.addEventListener("click", () => {
     modal.style.display = "none";
   });
 }
 
-// Cerrar haciendo click fuera del cuadro (UX premium)
+
 if (modal) {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
@@ -337,7 +337,7 @@ if (modal) {
 }
 
 .modal-contenido {
-  position: relative; /* 🔑 NECESARIO para posicionar la X */
+  position: relative; 
 }
 
 .error-regalo {
@@ -363,17 +363,17 @@ button.btn-secundario {
 /* ===== MÓVIL ===== */
 @media (max-width: 768px) {
   .hero-ceremonia {
-    aspect-ratio: 16 / 10;   /* más bajita */
-    max-height: 55vh;        /* límite claro */
+    aspect-ratio: 16 / 10;   
+    max-height: 55vh;        
   }
 
   .hero-ceremonia img {
-    object-position: center top; /* prioriza la parte bonita */
+    object-position: center top; 
   }
 }
 
 
-    /* ===================== CONTENIDO ===================== */
+
     .contenido {
       padding: 3.5rem 1.5rem 4.5rem;
     }
@@ -384,7 +384,7 @@ button.btn-secundario {
       text-align: center;
     }
 
-    /* ===================== SEPARADOR ARQUITECTÓNICO ===================== */
+
     .separador {
       display: flex;
       justify-content: center;
@@ -410,7 +410,7 @@ button.btn-secundario {
       border-radius: 50%;
     }
 
-    /* ===================== TEXTOS ===================== */
+
     .titulo-seccion {
       font-size: 1.25rem;
       letter-spacing: 0.35em;
@@ -447,7 +447,7 @@ button.btn-secundario {
       max-width: 720px;
       margin: 0 auto;
     }
-    /* ===================== BOTÓN MAPA ===================== */
+
 .btn-mapa {
   display: inline-block;
   margin-top: 2.5rem;
@@ -512,24 +512,23 @@ button.btn-secundario {
       letter-spacing: 0.08em;
         color: #555;
   align-items: center;
-  gap: 0.2rem;   /* ← aquí está la magia */
+  gap: 0.2rem;   
   margin-top: 1.4rem;
 }
-/* Label IBAN (verde) */
+
 .iban-label {
   display: block;
   font-size: 0.8rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #8b9a77; /* tu verde */
+  color: #8b9a77; 
   margin-bottom: 0.3rem;
 }
 
-/* Número IBAN (anti-iOS) */
-/* CONTENEDOR */
+
 .iban {
   text-align: center;
-  pointer-events: none; /* 🔑 corta detección iOS */
+  pointer-events: none; 
 }
 a[x-apple-data-detectors],
 a[x-apple-data-detectors-type="bank-account"],
@@ -539,7 +538,7 @@ a[x-apple-data-detectors-type="number"] {
   font-size: inherit !important;
 }
 
-/* NÚMERO */
+
 .iban-number {
   display: block;
   font-size: 1.18rem;
@@ -551,7 +550,7 @@ a[x-apple-data-detectors-type="number"] {
   -webkit-text-fill-color: #555;
 }
 
-/* 🔒 BLOQUEO TOTAL iOS / Safari */
+
 a[x-apple-data-detectors],
 a[x-apple-data-detectors-type="bank-account"],
 a[x-apple-data-detectors-type="number"],
@@ -595,7 +594,7 @@ a[x-apple-data-detectors-type="number"],
   object-fit: contain;
 }
 
-/* Flechas */
+
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -622,7 +621,7 @@ a[x-apple-data-detectors-type="number"],
   right: 10px;
 }
 
-    /* ===================== RESPONSIVE ===================== */
+
     @media (max-width: 768px) {
   .tarjeta {
     width: 85%;
