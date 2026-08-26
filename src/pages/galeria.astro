@@ -5,15 +5,15 @@ const BUCKET = "Fotos.RJ";
 
 const { data: fotos, error } = await supabase
   .from("fotos_subidas")
-  .select("*")
+  .select(
+    "id, nombre_invitado, nombre_archivo, ruta_archivo, created_at"
+  )
   .order("created_at", { ascending: false });
 
 const fotosConUrl = (fotos || []).map((foto) => {
-const { data } = supabase.storage
-
-  .from(BUCKET)
-
-  .getPublicUrl(foto.ruta_archivo);
+  const { data } = supabase.storage
+    .from(BUCKET)
+    .getPublicUrl(foto.ruta_archivo);
 
   return {
     ...foto,
@@ -53,18 +53,18 @@ const { data } = supabase.storage
 
       .pagina {
         min-height: 100vh;
-        padding: 4rem 1.5rem;
+        padding: 3rem 1.25rem;
       }
 
       .contenedor {
         width: 100%;
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
       .cabecera {
         text-align: center;
-        margin-bottom: 3.5rem;
+        margin-bottom: 3rem;
       }
 
       .nombres {
@@ -130,15 +130,21 @@ const { data } = supabase.storage
         padding: 4rem 1rem;
       }
 
+      /*
+       * =========================
+       * GALERÍA
+       * =========================
+       */
+
       .galeria {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.2rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
       }
 
       .foto {
         background: white;
-        border-radius: 16px;
+        border-radius: 14px;
         overflow: hidden;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
       }
@@ -151,20 +157,20 @@ const { data } = supabase.storage
       }
 
       .informacion {
-        padding: 1rem 1.1rem 1.15rem;
+        padding: 0.8rem 0.9rem 0.9rem;
       }
 
       .nombre {
         margin: 0;
         color: #8b9a77;
-        font-size: 0.95rem;
-        letter-spacing: 0.08em;
+        font-size: 0.9rem;
+        letter-spacing: 0.06em;
       }
 
       .fecha {
-        margin: 0.35rem 0 0;
+        margin: 0.3rem 0 0;
         color: #999;
-        font-size: 0.78rem;
+        font-size: 0.75rem;
       }
 
       .volver {
@@ -179,7 +185,6 @@ const { data } = supabase.storage
         letter-spacing: 0.12em;
         font-size: 0.8rem;
         text-transform: uppercase;
-        transition: all 0.2s ease;
       }
 
       .volver:hover {
@@ -187,23 +192,48 @@ const { data } = supabase.storage
         color: white;
       }
 
-      @media (max-width: 750px) {
-        .galeria {
-          grid-template-columns: repeat(2, 1fr);
-        }
+      /*
+       * =========================
+       * TABLET
+       * =========================
+       */
 
-        .nombres {
-          font-size: 1.7rem;
+      @media (max-width: 900px) {
+        .galeria {
+          grid-template-columns: repeat(3, 1fr);
         }
       }
 
-      @media (max-width: 480px) {
+      /*
+       * =========================
+       * MÓVIL
+       * =========================
+       */
+
+      @media (max-width: 600px) {
         .pagina {
-          padding: 2.5rem 1rem;
+          padding: 2.5rem 0.8rem;
+        }
+
+        .nombres {
+          font-size: 1.6rem;
         }
 
         .galeria {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.7rem;
+        }
+
+        .informacion {
+          padding: 0.65rem 0.7rem 0.75rem;
+        }
+
+        .nombre {
+          font-size: 0.8rem;
+        }
+
+        .fecha {
+          font-size: 0.7rem;
         }
       }
     </style>
@@ -252,41 +282,39 @@ const { data } = supabase.storage
         {
           fotosConUrl.length > 0 && (
             <div class="galeria">
-              {
-                fotosConUrl.map((foto) => (
-                  <article class="foto">
-                    <img
-                      class="foto-imagen"
-                      src={foto.url}
-                      alt={`Foto subida por ${foto.nombre_invitado || "invitado"}`}
-                      loading="lazy"
-                    />
+              {fotosConUrl.map((foto) => (
+                <article class="foto">
+                  <img
+                    class="foto-imagen"
+                    src={foto.url}
+                    alt={`Foto subida por ${
+                      foto.nombre_invitado || "invitado"
+                    }`}
+                    loading="lazy"
+                  />
 
-                    <div class="informacion">
-                      <p class="nombre">
-                        {foto.nombre_invitado || "Invitado"}
+                  <div class="informacion">
+                    <p class="nombre">
+                      {foto.nombre_invitado || "Invitado"}
+                    </p>
+
+                    {foto.created_at && (
+                      <p class="fecha">
+                        {new Date(
+                          foto.created_at
+                        ).toLocaleDateString(
+                          "es-ES",
+                          {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                          }
+                        )}
                       </p>
-
-                      {
-                        foto.created_at && (
-                          <p class="fecha">
-                            {new Date(
-                              foto.created_at
-                            ).toLocaleDateString(
-                              "es-ES",
-                              {
-                                day: "numeric",
-                                month: "long",
-                                year: "numeric",
-                              }
-                            )}
-                          </p>
-                        )
-                      }
-                    </div>
-                  </article>
-                ))
-              }
+                    )}
+                  </div>
+                </article>
+              ))}
             </div>
           )
         }
