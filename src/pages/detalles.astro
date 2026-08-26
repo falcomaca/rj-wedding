@@ -129,19 +129,10 @@ import { SITE_DESCRIPTION } from '../consts';
 Estamos planificando un viaje a Argentina. Si queréis tener un detalle con nosotros, os facilitamos un número de cuenta:
   </p>
 <button class="btn-mapa" id="btn-ver-detalles">
+
   VER DETALLES
+
 </button>
-
-<div id="modal-regalo" class="modal-regalo">
-  <div class="modal-contenido">
-    <button class="cerrar-modal" id="cerrar-modal">&times;</button>
-    <h3>Introduce la contraseña</h3>
-      <input type="password" id="clave-regalo" placeholder="Contraseña" />
-<button class="btn-secundario" id="btn-acceder">Acceder</button>
-      <p id="error-regalo" class="error-regalo"></p>
-    </div>
-  </div>
-
 
 <div id="cuenta-regalo" class="bloque-cuentas oculto"></div>
 </section>
@@ -203,65 +194,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const btnDetalles = document.getElementById("btn-ver-detalles");
-const btnAcceder = document.getElementById("btn-acceder");
-const cerrarModal = document.getElementById("cerrar-modal");
-const modal = document.getElementById("modal-regalo");
+
 const cuenta = document.getElementById("cuenta-regalo");
-const input = document.getElementById("clave-regalo");
 
+if (btnDetalles && cuenta) {
 
-if (cerrarModal && modal) {
-  cerrarModal.addEventListener("click", () => {
-    modal.style.display = "none";
+  btnDetalles.addEventListener("click", () => {
+
+    cuenta.innerHTML = `
+
+      <p class="iban">
+
+        <span class="iban-label">IBAN</span>
+
+        <span class="iban-number" dir="ltr">
+
+          ES11-2100-3252-4222-0019-9920
+
+        </span>
+
+      </p>
+
+      <div class="cuenta titular">
+
+        <span>TITULAR</span>
+
+        <strong>JOSÉ LUIS JIMÉNEZ RUBIO</strong>
+
+      </div>
+
+    `;
+
+    cuenta.classList.remove("oculto");
+
+    btnDetalles.style.display = "none";
+
   });
+
 }
-
-
-if (modal) {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-}
-  if (btnDetalles && modal) {
-    btnDetalles.addEventListener("click", () => {
-      modal.style.display = "flex";
-      if (input) input.value = "";
-    });
-  }
-
-if (btnAcceder && input && cuenta && modal) {
-  btnAcceder.addEventListener("click", () => {
-
-    const contraseñaCorrecta = "Guadalupe@2026";
-
-    if (input.value === contraseñaCorrecta) {
-      modal.style.display = "none";
-
-      // 🔒 Inyecta la cuenta SOLO tras validar
-      cuenta.innerHTML = `
-        <p class="iban">
-          <span class="iban-label">IBAN</span>
-          <span class="iban-number" dir="ltr">
-            ES11-2100-3252-4222-0019-9920
-          </span>
-        </p>
-        <div class="cuenta titular">
-          <span>TITULAR</span>
-          <strong>JOSÉ LUIS JIMÉNEZ RUBIO</strong>
-        </div>
-      `;
-
-      cuenta.classList.remove("oculto");
-      btnDetalles.style.display = "none";
-
-    } else {
-      alert("Contraseña incorrecta 💌");
-    }
-    });
-  }
-
 });
 </script>
   </body>
