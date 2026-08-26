@@ -1,0 +1,304 @@
+---
+import { supabase } from "../lib/supabase.js";
+
+const BUCKET = "Fotos.RJ";
+
+const { data: fotos, error } = await supabase
+  .from("fotos_subidas")
+  .select("*")
+  .order("created_at", { ascending: false });
+
+const fotosConUrl = (fotos || []).map((foto) => {
+const { data } = supabase.storage
+
+  .from(BUCKET)
+
+  .getPublicUrl(foto.ruta_archivo);
+
+  return {
+    ...foto,
+    url: data.publicUrl,
+  };
+});
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+
+    <title>Rocío & José Luis · Galería</title>
+
+    <style>
+      @font-face {
+        font-family: "Boda";
+        src: url("/fonts/abadi-mt-extra-light.ttf")
+          format("truetype");
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f8f6f1;
+        color: #444;
+        font-family: "Boda", sans-serif;
+      }
+
+      .pagina {
+        min-height: 100vh;
+        padding: 4rem 1.5rem;
+      }
+
+      .contenedor {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .cabecera {
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+
+      .nombres {
+        margin: 0 0 0.7rem;
+        font-size: 2.2rem;
+        letter-spacing: 0.18em;
+        color: #8b9a77;
+        font-weight: 500;
+      }
+
+      .subtitulo {
+        margin: 0;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #888;
+      }
+
+      .separador {
+        width: 80px;
+        height: 1px;
+        background: #8b9a77;
+        margin: 2.5rem auto 0;
+        position: relative;
+      }
+
+      .separador::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 7px;
+        height: 7px;
+        background: #8b9a77;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .titulo {
+        text-align: center;
+        margin: 0 0 0.7rem;
+        font-size: 1.7rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+      }
+
+      .descripcion {
+        text-align: center;
+        margin: 0 0 2.5rem;
+        color: #777;
+        font-size: 1rem;
+      }
+
+      .error {
+        text-align: center;
+        color: #b76e79;
+        margin: 2rem 0;
+      }
+
+      .sin-fotos {
+        text-align: center;
+        color: #888;
+        padding: 4rem 1rem;
+      }
+
+      .galeria {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+      }
+
+      .foto {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      .foto-imagen {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+      }
+
+      .informacion {
+        padding: 1rem 1.1rem 1.15rem;
+      }
+
+      .nombre {
+        margin: 0;
+        color: #8b9a77;
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+      }
+
+      .fecha {
+        margin: 0.35rem 0 0;
+        color: #999;
+        font-size: 0.78rem;
+      }
+
+      .volver {
+        display: block;
+        width: fit-content;
+        margin: 3rem auto 0;
+        padding: 0.9rem 1.8rem;
+        border: 1px solid #8b9a77;
+        border-radius: 999px;
+        color: #8b9a77;
+        text-decoration: none;
+        letter-spacing: 0.12em;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+      }
+
+      .volver:hover {
+        background: #8b9a77;
+        color: white;
+      }
+
+      @media (max-width: 750px) {
+        .galeria {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .nombres {
+          font-size: 1.7rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .pagina {
+          padding: 2.5rem 1rem;
+        }
+
+        .galeria {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="pagina">
+      <div class="contenedor">
+
+        <header class="cabecera">
+          <div class="nombres">
+            ROCÍO & JOSÉ LUIS
+          </div>
+
+          <div class="subtitulo">
+            Todos los recuerdos
+          </div>
+
+          <div class="separador"></div>
+        </header>
+
+        <h1 class="titulo">
+          Galería de la boda
+        </h1>
+
+        <p class="descripcion">
+          Todas las fotos compartidas por vuestros invitados
+        </p>
+
+        {
+          error && (
+            <p class="error">
+              No se han podido cargar las fotos.
+            </p>
+          )
+        }
+
+        {
+          !error && fotosConUrl.length === 0 && (
+            <div class="sin-fotos">
+              Todavía no hay fotos compartidas.
+            </div>
+          )
+        }
+
+        {
+          fotosConUrl.length > 0 && (
+            <div class="galeria">
+              {
+                fotosConUrl.map((foto) => (
+                  <article class="foto">
+                    <img
+                      class="foto-imagen"
+                      src={foto.url}
+                      alt={`Foto subida por ${foto.nombre_invitado || "invitado"}`}
+                      loading="lazy"
+                    />
+
+                    <div class="informacion">
+                      <p class="nombre">
+                        {foto.nombre_invitado || "Invitado"}
+                      </p>
+
+                      {
+                        foto.created_at && (
+                          <p class="fecha">
+                            {new Date(
+                              foto.created_at
+                            ).toLocaleDateString(
+                              "es-ES",
+                              {
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric",
+                              }
+                            )}
+                          </p>
+                        )
+                      }
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
+          )
+        }
+
+        <a
+          class="volver"
+          href="/fotos"
+        >
+          Volver a subir fotos
+        </a>
+
+      </div>
+    </main>
+  </body>
+</html>

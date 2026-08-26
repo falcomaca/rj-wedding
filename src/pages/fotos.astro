@@ -1,0 +1,959 @@
+---
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Rocío & José Luis · Fotos</title>
+
+    <style>
+      @font-face {
+        font-family: "Boda";
+        src: url("/fonts/abadi-mt-extra-light.ttf") format("truetype");
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #f8f6f1;
+        color: #444;
+        font-family: "Boda", sans-serif;
+      }
+
+      .fotos-page {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 3rem 1.5rem;
+      }
+
+      .contenedor {
+        width: 100%;
+        max-width: 520px;
+        text-align: center;
+      }
+
+      .nombres {
+        margin: 1rem 0 0.5rem;
+        font-size: 2rem;
+        letter-spacing: 0.18em;
+        color: #8b9a77;
+        font-weight: 500;
+      }
+
+      .subtitulo {
+        margin: 0 0 3.5rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #888;
+      }
+
+      .icono {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        margin: 0 0 1rem;
+        font-size: 1.7rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+      }
+
+      .texto {
+        max-width: 420px;
+        margin: 0 auto 2.5rem;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #666;
+      }
+
+      .campo {
+        text-align: left;
+        margin-bottom: 1.5rem;
+      }
+
+      .campo label {
+        display: block;
+        margin-bottom: 0.6rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #8b9a77;
+      }
+
+      .campo input {
+        width: 100%;
+        padding: 1rem 1.2rem;
+        border: 1px solid #d3d1c9;
+        border-radius: 999px;
+        background: white;
+        font-family: inherit;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      .campo input:focus {
+        border-color: #8b9a77;
+      }
+
+      .campo input.input-error {
+        border-color: #b76e79;
+      }
+
+      .boton-fotos {
+        display: block;
+        width: 100%;
+        padding: 1.15rem 1.5rem;
+        border: 1.5px solid #8b9a77;
+        border-radius: 999px;
+        background: #8b9a77;
+        color: white;
+        font-family: inherit;
+        font-size: 0.95rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-align: center;
+      }
+
+      .boton-fotos:hover {
+        background: #e6dccb;
+        border-color: #e6dccb;
+        color: #8b9a77;
+      }
+
+      .boton-fotos.deshabilitado {
+        opacity: 0.55;
+        pointer-events: none;
+      }
+
+      .mensaje-error {
+        margin: 0.7rem 0 0;
+        padding-left: 1.2rem;
+        color: #b76e79;
+        font-size: 0.8rem;
+        text-align: left;
+      }
+
+      .estado {
+        min-height: 1.4rem;
+        margin-top: 1.2rem;
+        font-size: 0.9rem;
+        color: #8b9a77;
+      }
+
+
+      :global(.vista-previa) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.7rem;
+        margin-top: 1.5rem;
+      }
+
+      :global(.foto-preview) {
+        position: relative;
+        width: 100%;
+        height: 105px;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #e9e6df;
+      }
+
+      :global(.foto-preview img) {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .contador {
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        color: #8b9a77;
+        letter-spacing: 0.08em;
+      }
+
+      .guardado {
+        margin-top: 0.8rem;
+        font-size: 0.85rem;
+        color: #8b9a77;
+      }
+
+      .separador {
+        width: 80px;
+        height: 1px;
+        background: #8b9a77;
+        margin: 0 auto 3rem;
+        position: relative;
+      }
+
+      .separador::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 7px;
+        height: 7px;
+        background: #8b9a77;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+
+      @media (max-width: 600px) {
+        .fotos-page {
+          padding: 2.5rem 1.25rem;
+        }
+
+        .nombres {
+          font-size: 1.6rem;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        :global(.vista-previa) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        :global(.foto-preview) {
+          height: 85px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="fotos-page">
+      <div class="contenedor">
+
+        <div class="nombres">
+          ROCÍO & JOSÉ LUIS
+        </div>
+
+        <div class="subtitulo">
+          Comparte tus recuerdos
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="icono">
+          📷
+        </div>
+
+        <h1>
+          La boda desde vuestros ojos
+        </h1>
+
+        <p class="texto">
+          Un recuerdo compartido entre todos.
+          <br />
+          Queremos ver vuestras fotos favoritas de este día.
+        </p>
+
+        <div class="campo">
+          <label for="nombre">
+            Tu nombre
+          </label>
+
+          <input
+            id="nombre"
+            type="text"
+            placeholder="¿Cómo te llamas?"
+            autocomplete="name"
+            required
+          />
+
+          <p
+            id="error-nombre"
+            class="mensaje-error"
+            style="display: none;"
+          >
+            Introduce tu nombre antes de añadir fotos.
+          </p>
+        </div>
+
+        <input
+          type="file"
+          id="selector-fotos"
+          accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
+          multiple
+          hidden
+        />
+
+        <label
+          for="selector-fotos"
+          class="boton-fotos"
+          id="boton-fotos"
+        >
+          AÑADIR FOTOS
+        </label>
+
+        <div
+          id="estado"
+          class="estado"
+        ></div>
+
+        <div
+          id="vista-previa"
+          class="vista-previa"
+        ></div>
+
+        <div
+          id="contador"
+          class="contador"
+        >
+          0 de 10 fotos guardadas
+        </div>
+
+        <div
+          id="guardado"
+          class="guardado"
+        ></div>
+
+      </div>
+    </main>
+
+    <script>
+      import { createClient } from "@supabase/supabase-js";
+
+      const supabase = createClient(
+        import.meta.env.PUBLIC_SUPABASE_URL,
+        import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY
+      );
+
+      const BUCKET = "Fotos.RJ";
+      const LIMITE_FOTOS = 10;
+
+      const selector =
+        document.getElementById("selector-fotos");
+
+      const vistaPrevia =
+        document.getElementById("vista-previa");
+
+      const contador =
+        document.getElementById("contador");
+
+      const nombre =
+        document.getElementById("nombre");
+
+      const errorNombre =
+        document.getElementById("error-nombre");
+
+      const estado =
+        document.getElementById("estado");
+
+      const guardado =
+        document.getElementById("guardado");
+
+      const botonFotos =
+        document.getElementById("boton-fotos");
+
+
+      function obtenerIdInvitado() {
+        let id =
+          localStorage.getItem("boda_guest_id");
+
+        if (!id) {
+          id = crypto.randomUUID();
+
+          localStorage.setItem(
+            "boda_guest_id",
+            id
+          );
+        }
+
+        return id;
+      }
+
+      const guestId =
+        obtenerIdInvitado();
+
+
+      function carpetaInvitado() {
+        return `invitados/${guestId}`;
+      }
+
+
+      let fotosGuardadas = [];
+
+
+      function mostrarEstado(
+        texto,
+        error = false
+      ) {
+        if (!estado) return;
+
+        estado.textContent = texto;
+
+        estado.style.color =
+          error
+            ? "#b76e79"
+            : "#8b9a77";
+      }
+
+
+      function comprobarNombre() {
+        if (!nombre) return false;
+
+        const nombreEscrito =
+          nombre.value.trim();
+
+        if (!nombreEscrito) {
+          if (errorNombre) {
+            errorNombre.style.display =
+              "block";
+          }
+
+          nombre.classList.add(
+            "input-error"
+          );
+
+          return false;
+        }
+
+        if (errorNombre) {
+          errorNombre.style.display =
+            "none";
+        }
+
+        nombre.classList.remove(
+          "input-error"
+        );
+
+        localStorage.setItem(
+          "boda_guest_name",
+          nombreEscrito
+        );
+
+        return true;
+      }
+
+
+      function cargarNombreGuardado() {
+        const nombreGuardado =
+          localStorage.getItem(
+            "boda_guest_name"
+          );
+
+        if (
+          nombreGuardado &&
+          nombre
+        ) {
+          nombre.value =
+            nombreGuardado;
+        }
+      }
+
+
+      if (nombre) {
+        nombre.addEventListener(
+          "input",
+          () => {
+            if (
+              nombre.value.trim()
+            ) {
+              nombre.classList.remove(
+                "input-error"
+              );
+
+              if (errorNombre) {
+                errorNombre.style.display =
+                  "none";
+              }
+
+              localStorage.setItem(
+                "boda_guest_name",
+                nombre.value.trim()
+              );
+            }
+          }
+        );
+      }
+
+
+      function actualizarContador() {
+        if (!contador) return;
+
+        contador.textContent =
+          `${fotosGuardadas.length} de ${LIMITE_FOTOS} fotos guardadas`;
+
+        if (
+          fotosGuardadas.length > 0 &&
+          guardado
+        ) {
+          guardado.textContent =
+            "Tus fotos seguirán aquí cuando vuelvas a entrar ✓";
+        }
+      }
+
+      function mostrarFoto(
+        foto
+      ) {
+        if (!vistaPrevia) return;
+
+        const contenedor =
+          document.createElement(
+            "div"
+          );
+
+        contenedor.className =
+          "foto-preview";
+
+
+        const imagen =
+          document.createElement(
+            "img"
+          );
+
+        imagen.src =
+          foto.url;
+
+        imagen.alt =
+          "Foto de la boda";
+
+        imagen.loading =
+          "lazy";
+
+
+        imagen.onerror =
+          () => {
+            console.error(
+              "No se pudo cargar:",
+              foto.url
+            );
+          };
+
+
+        contenedor.appendChild(
+          imagen
+        );
+
+        vistaPrevia.appendChild(
+          contenedor
+        );
+      }
+
+
+      function actualizarVista() {
+        if (!vistaPrevia) return;
+
+        vistaPrevia.innerHTML =
+          "";
+
+        fotosGuardadas.forEach(
+          (foto) => {
+            mostrarFoto(foto);
+          }
+        );
+
+        actualizarContador();
+      }
+
+
+
+      async function cargarFotosGuardadas() {
+        mostrarEstado(
+          "Buscando tus fotos..."
+        );
+
+        try {
+          const {
+            data,
+            error
+          } =
+            await supabase.storage
+              .from(BUCKET)
+              .list(
+                carpetaInvitado(),
+                {
+                  limit: 100,
+                  sortBy: {
+                    column:
+                      "created_at",
+                    order:
+                      "asc"
+                  }
+                }
+              );
+
+
+          if (error) {
+            console.error(
+              "Error listando fotos:",
+              error
+            );
+
+            mostrarEstado(
+              "No hemos podido cargar tus fotos.",
+              true
+            );
+
+            return;
+          }
+
+
+          fotosGuardadas =
+            [];
+
+
+          for (
+            const archivo of
+            data || []
+          ) {
+            if (
+              !archivo.name
+            ) {
+              continue;
+            }
+
+
+            const ruta =
+              `${carpetaInvitado()}/${archivo.name}`;
+
+
+            const {
+              data: urlData
+            } =
+              supabase.storage
+                .from(BUCKET)
+                .getPublicUrl(
+                  ruta
+                );
+
+
+            fotosGuardadas.push({
+              name:
+                archivo.name,
+
+              url:
+                urlData.publicUrl
+            });
+          }
+
+
+          actualizarVista();
+
+          mostrarEstado("");
+
+        } catch (error) {
+          console.error(
+            "Error cargando fotos:",
+            error
+          );
+
+          mostrarEstado(
+            "No hemos podido cargar tus fotos.",
+            true
+          );
+        }
+      }
+
+
+      async function subirFoto(
+        foto
+      ) {
+        const extension =
+          foto.name.includes(".")
+            ? foto.name
+                .split(".")
+                .pop()
+                .toLowerCase()
+            : "jpg";
+
+
+        const nombreArchivo =
+          `${Date.now()}-${crypto.randomUUID()}.${extension}`;
+
+
+        const ruta =
+          `${carpetaInvitado()}/${nombreArchivo}`;
+
+
+
+        const {
+          error:
+            errorSubida
+        } =
+          await supabase.storage
+            .from(BUCKET)
+            .upload(
+              ruta,
+              foto,
+              {
+                cacheControl:
+                  "3600",
+
+                upsert:
+                  false,
+
+                contentType:
+                  foto.type ||
+                  "image/jpeg"
+              }
+            );
+
+
+        if (errorSubida) {
+          console.error(
+            "Error subiendo foto:",
+            errorSubida
+          );
+
+          throw errorSubida;
+        }
+
+
+
+        const {
+          data: urlData
+        } =
+          supabase.storage
+            .from(BUCKET)
+            .getPublicUrl(
+              ruta
+            );
+
+
+
+        const nombreInvitado =
+          nombre.value.trim();
+
+
+        const {
+          error:
+            errorRegistro
+        } =
+          await supabase
+            .from("fotos_subidas")
+            .insert({
+              invitado_id:
+                guestId,
+
+              nombre_invitado:
+                nombreInvitado,
+
+              nombre_archivo:
+                nombreArchivo,
+
+              ruta_archivo:
+                ruta
+            });
+
+
+
+
+        if (errorRegistro) {
+          console.error(
+            "Error registrando quién subió la foto:",
+            errorRegistro
+          );
+
+
+          await supabase.storage
+            .from(BUCKET)
+            .remove([
+              ruta
+            ]);
+
+
+          throw errorRegistro;
+        }
+
+
+        return {
+          name:
+            nombreArchivo,
+
+          url:
+            urlData.publicUrl
+        };
+      }
+
+
+
+
+      async function guardarFotos(
+        fotos
+      ) {
+        if (
+          !fotos ||
+          fotos.length === 0
+        ) {
+          return;
+        }
+
+
+        const espacioDisponible =
+          LIMITE_FOTOS -
+          fotosGuardadas.length;
+
+
+        if (
+          espacioDisponible <= 0
+        ) {
+          mostrarEstado(
+            "Ya tienes 10 fotos guardadas.",
+            true
+          );
+
+          return;
+        }
+
+
+        const fotosParaSubir =
+          fotos.slice(
+            0,
+            espacioDisponible
+          );
+
+
+        if (botonFotos) {
+          botonFotos.classList.add(
+            "deshabilitado"
+          );
+        }
+
+
+        try {
+          for (
+            let i = 0;
+            i < fotosParaSubir.length;
+            i++
+          ) {
+            const foto =
+              fotosParaSubir[i];
+
+
+            mostrarEstado(
+              `Guardando foto ${i + 1} de ${fotosParaSubir.length}...`
+            );
+
+
+            const fotoGuardada =
+              await subirFoto(
+                foto
+              );
+
+
+            fotosGuardadas.push(
+              fotoGuardada
+            );
+
+
+            actualizarVista();
+          }
+
+
+          mostrarEstado("");
+
+          if (guardado) {
+            guardado.textContent =
+              "Todas las fotos se han guardado ✓";
+          }
+
+        } catch (error) {
+          console.error(
+            "Error guardando fotos:",
+            error
+          );
+
+          mostrarEstado(
+            "Ha ocurrido un error al guardar las fotos.",
+            true
+          );
+
+        } finally {
+          if (botonFotos) {
+            botonFotos.classList.remove(
+              "deshabilitado"
+            );
+          }
+        }
+      }
+
+
+      /* ============================
+         SELECCIONAR FOTOS
+         ============================ */
+
+      if (selector) {
+        selector.addEventListener(
+          "change",
+          async () => {
+
+            if (
+              !comprobarNombre()
+            ) {
+              selector.value =
+                "";
+
+              return;
+            }
+
+
+            const espacioDisponible =
+              LIMITE_FOTOS -
+              fotosGuardadas.length;
+
+
+            if (
+              espacioDisponible <= 0
+            ) {
+              mostrarEstado(
+                "Ya tienes 10 fotos guardadas.",
+                true
+              );
+
+              selector.value =
+                "";
+
+              return;
+            }
+
+
+            const nuevasFotos =
+              Array.from(
+                selector.files || []
+              ).slice(
+                0,
+                espacioDisponible
+              );
+
+
+            selector.value =
+              "";
+
+
+            if (
+              nuevasFotos.length ===
+              0
+            ) {
+              return;
+            }
+
+
+            await guardarFotos(
+              nuevasFotos
+            );
+          }
+        );
+      }
+
+
+      cargarNombreGuardado();
+
+      cargarFotosGuardadas();
+    </script>
+  </body>
+</html>
